@@ -227,7 +227,7 @@
                             alert('Email sent successfully!');
                         }, function(error) {
                             console.log('FAILED...', error);
-                            alert('Failed to send email.');
+                            alert('Failed to send email.' + error.text);
                         });
                 });
 
