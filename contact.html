@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
     <link rel="icon" href="wabs.jpeg" type="image/jpeg">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -186,7 +187,7 @@
         <section>
             <h2><br><br><br>Get in Touch</h2>
             <p>Reach out to us via email or phone.</p>
-            <form id="contactForm" action="send_form.php" method="POST">
+            <form id="contactForm">
             
                 <label for="name">Name *</label><br>
                 <input type="text" id="name" name="name" placeholder="Your name" required><br><br>
@@ -201,6 +202,36 @@
 
                 <button type="submit">Send</button>
             </form>
+            <script>
+                emailjs.init('3AtKE1qr2jbtdDEhi') //initiliazes js account (this is my public key , change to yours if needed)
+
+                const form = document.getElementById('contactForm'); // grabs the form created for use (this turns each element into a key value pair)
+
+                form.addEventListener('submit', function(event){ // adds the event listener which basically waits for submit to be clicked before the callback function is used
+                    
+                    event.preventDefualt(); // prevents default behaviour of form submission
+
+                    const name = document.getElementById('name').value; 
+                    const email = document.getElementById('email').value;    // grabs the values and stores them under the names
+                    const message = document.getElementById('message').value;
+
+                    const params = {
+                        from_name: name,
+                        from_email: email,  // think about this as storing all of the parameters in one object
+                        message: message,
+                    };
+
+                    emailjs.send('service_tzkm4yn', 'template_6nud1oa', params) // uses the object here to send the email.
+                            .then(function(response) { //  rest is pretty muchh just for debugging (like a try catch statement)
+                            console.log('SUCCESS!', response.status, response.text);
+                            alert('Email sent successfully!');
+                        }, function(error) {
+                            console.log('FAILED...', error);
+                            alert('Failed to send email.');
+                        });
+                });
+
+            </script>
         </section>
     </main>
     <footer>
