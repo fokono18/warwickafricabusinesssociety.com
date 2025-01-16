@@ -211,7 +211,7 @@
 
                 form.addEventListener('submit', function(event){ // adds the event listener which basically waits for submit to be clicked before the callback function is used
                     
-                    event.preventDefault(); // prevents default behaviour of form submission
+                    event.preventDefault(); // prevents default behaviour of form submission, where the form is appended to the url.
 
                     const name = document.getElementById('name').value; 
                     const email = document.getElementById('email').value;    // grabs the values and stores them under the names
@@ -223,13 +223,13 @@
                         message: message,
                     };
 
-                    emailjs.send('service_tzkm4yn', 'template_6nud1oa', params) // uses the object here to send the email.
-                            .then(function(response) { //  rest is pretty muchh just for debugging (like a try catch statement)
+                    emailjs.send('service_tzkm4yn', 'template_6nud1oa', params) // uses the service and template id , again can be chanmged to suite your account also uses the object here to send the email.
+                            .then(function(response) { //  rest is pretty much just for debugging (like a try catch statement)
                             console.log('SUCCESS!', response.status, response.text);
                             alert('Email sent successfully!');
                         }, function(error) {
                             console.log('FAILED...', error);
-                            alert('Failed to send email.' + error.text);
+                            alert('Failed to send email.' + ' ' +error.text);
                         });
                 });
 
