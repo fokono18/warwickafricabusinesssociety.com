@@ -91,37 +91,46 @@
         .sector {
             margin: 50px 0;
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
+            flex-direction: column;
+            gap: 40px;
         }
 
         .sector-container {
             display: flex;
-            flex-direction: row;
             max-width: 1200px;
-            background-color: #002147;
-            color: white;
+            margin: 0 auto;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            width: 90%;
+        }
+
+        .sector-container:nth-child(even) {
+            flex-direction: row-reverse; /* Alternate image positions */
+        }
+
+        .sector-image {
+            flex: 1;
         }
 
         .sector-image img {
-            width: auto;
-            height: auto;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
         }
 
         .sector-content {
-            padding: 2rem;
             flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #002147;
+            color: white;
         }
 
         .sector-content h2 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
+            font-size: 2rem;
+            margin-bottom: 20px;
             font-weight: bold;
         }
 
@@ -148,13 +157,6 @@
 
         section {
             margin-bottom: 40px;
-        }
-
-        .hero-section-header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: #152B52;
         }
 
         @media (max-width: 768px) {
@@ -184,6 +186,7 @@
 
             .sector-content {
                 text-align: center;
+                padding: 20px;
             }
         }
     </style>
@@ -210,58 +213,56 @@
         </section>
 
         <!-- Sectors Section -->
-        <section>
-            <div class="sector">
-                <!-- Energy Sector -->
-                <div class="sector-container">
-                    <div class="sector-image">
-                        <img src="energy_sec.png" alt="Energy Sector">
-                    </div>
-                    <div class="sector-content">
-                        <h2>Energy</h2>
-                        <p>
-                            Details about energy go here. Details about energy go here. Details about energy go here.
-                        </p>
-                    </div>
+        <section class="sector">
+            <!-- Energy Sector -->
+            <div class="sector-container">
+                <div class="sector-image">
+                    <img src="energy_sec.png" alt="Energy Sector">
                 </div>
-
-                <!-- Finance Sector -->
-                <div class="sector-container">
-                    <div class="sector-image">
-                        <img src="finance_sec.png" alt="Finance Sector">
-                    </div>
-                    <div class="sector-content">
-                        <h2>Finance</h2>
-                        <p>
-                            Details about finance go here. Details about finance go here. Details about finance go here.
-                        </p>
-                    </div>
+                <div class="sector-content">
+                    <h2>Energy</h2>
+                    <p>
+                        Explore Africa's renewable energy potential, sustainable energy solutions, and investments shaping the future of clean energy across the continent.
+                    </p>
                 </div>
+            </div>
 
-                <!-- Technology Sector -->
-                <div class="sector-container">
-                    <div class="sector-image">
-                        <img src="tech_sec.png" alt="Technology Sector">
-                    </div>
-                    <div class="sector-content">
-                        <h2>Technology</h2>
-                        <p>
-                            Details about technology go here. Details about technology go here. Details about technology go here.
-                        </p>
-                    </div>
+            <!-- Finance Sector -->
+            <div class="sector-container">
+                <div class="sector-image">
+                    <img src="finance_sec.png" alt="Finance Sector">
                 </div>
+                <div class="sector-content">
+                    <h2>Finance</h2>
+                    <p>
+                        Discover the evolving financial landscape, innovative fintech solutions, and global partnerships revolutionizing the African finance sector.
+                    </p>
+                </div>
+            </div>
 
-                <!-- Real Estate Sector -->
-                <div class="sector-container">
-                    <div class="sector-image">
-                        <img src="resec.png" alt="Real Estate Sector">
-                    </div>
-                    <div class="sector-content">
-                        <h2>Real Estate & Property Development</h2>
-                        <p>
-                            Details about real estate go here. Details about real estate go here. Details about real estate go here.
-                        </p>
-                    </div>
+            <!-- Technology Sector -->
+            <div class="sector-container">
+                <div class="sector-image">
+                    <img src="tech_sec.png" alt="Technology Sector">
+                </div>
+                <div class="sector-content">
+                    <h2>Technology</h2>
+                    <p>
+                        Learn about groundbreaking advancements in technology, digital transformation, and Africa’s tech hubs driving innovation.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Real Estate Sector -->
+            <div class="sector-container">
+                <div class="sector-image">
+                    <img src="resec.png" alt="Real Estate Sector">
+                </div>
+                <div class="sector-content">
+                    <h2>Real Estate & Property Development</h2>
+                    <p>
+                        Explore Africa’s growing real estate market, urban development projects, and sustainable housing solutions transforming cities.
+                    </p>
                 </div>
             </div>
         </section>
