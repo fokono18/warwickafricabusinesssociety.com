@@ -73,6 +73,7 @@
             color: #ffffff;
             margin-top: 70px; /* Prevent header overlap */
         }
+
         .hero-section2 {
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("mission.png") center/cover;
             height: 70vh;
@@ -143,67 +144,32 @@
             margin: 0 10px;
         }
 
-        /* Responsive Styling */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                height: auto;
-                padding: 10px;
-            }
+        /* Feature Boxes Section Styling */
+        .features-section {
+            background-color: #f9f9f9; /* Light background to contrast with other sections */
+            padding: 40px 20px; /* Add some spacing around the boxes */
+            text-align: center; /* Center-align the content */
+        }
 
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-                margin-top: 10px;
-            }
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Space between boxes */
+            flex-wrap: wrap; /* Make boxes wrap on smaller screens */
+        }
 
-            .hero-section h1, .hero-section2 h1 {
-                font-size: 36px;
-            }
-
-            .hero-section p, .hero-section2 p {
-                font-size: 16px;
-            }
-            .text-banner {
-                margin-top: 20px; /* Space between the WABS logo and the text */
-                text-align: center;
-            }
-
-            .text-banner h2 {
-                font-size: 1.5rem; /* Adjust font size as needed */
-                color: #ffffff; /* White text color */
-                font-weight: 400; /* Regular weight */
-                line-height: 1.5; /* Spacing between lines */
-            }
-            /* Feature Boxes Section Styling */
-            .features-section {
-                background-color: #f9f9f9; /* Light background to contrast with other sections */
-                padding: 40px 20px; /* Add some spacing around the boxes */
-                text-align: center; /* Center-align the content */
-            }
-
-            .features {
-                display: flex;
-                justify-content: center;
-                gap: 20px; /* Space between boxes */
-                flex-wrap: wrap; /* Make boxes wrap on smaller screens */
-            }
-
-            .feature-box {
-                background-color: #1A3757; /* Dark blue background */
-                color: #FFFFFF; /* White text color */
-                text-align: center; /* Center the text */
-                padding: 20px 30px; /* Padding for better spacing */
-                border-radius: 10px; /* Rounded corners */
-                font-size: 1.2rem; /* Font size for the text */
-                font-weight: bold; /* Bold text */
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-                max-width: 250px; /* Limit the width of each box */
-                flex: 1; /* Allow boxes to grow equally */
-                margin: 10px; /* Add margin for spacing */
-            }
-
-
+        .feature-box {
+            background-color: #1A3757; /* Dark blue background */
+            color: #FFFFFF; /* White text color */
+            text-align: center; /* Center the text */
+            padding: 20px 30px; /* Padding for better spacing */
+            border-radius: 10px; /* Rounded corners */
+            font-size: 1.2rem; /* Font size for the text */
+            font-weight: bold; /* Bold text */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+            max-width: 250px; /* Limit the width of each box */
+            flex: 1; /* Allow boxes to grow equally */
+            margin: 10px; /* Add margin for spacing */
         }
     </style>
 </head>
@@ -241,7 +207,6 @@
             </div>
         </div>
     </section>
-    
 
     <!-- Second Hero Section -->
     <section class="hero-section2">
@@ -249,10 +214,12 @@
             <h1>Mission Statement</h1>
             <p>To empower those with a future interest in business
                 opportunities related to the African continent to navigate the
-                continnet’s emerging market by providing:
-                </p>
+                continent’s emerging market by providing:
+            </p>
         </div>
     </section>
+
+    <!-- Feature Boxes Section -->
     <section class="features-section">
         <div class="features">
             <div class="feature-box">Exclusive Insights</div>
@@ -260,7 +227,6 @@
             <div class="feature-box">Practical Knowledge</div>
         </div>
     </section>
-    
 
     <!-- Footer -->
     <footer>
