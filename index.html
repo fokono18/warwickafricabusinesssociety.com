@@ -74,17 +74,44 @@
             margin-top: 70px; /* Prevent header overlap */
         }
 
+        /* Second Hero Section Styling Update */
         .hero-section2 {
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("mission.png") center/cover;
-            height: 70vh;
+            height: auto; /* Allow the height to expand for the feature boxes */
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: #ffffff;
+            padding: 50px 20px; /* Add padding for better spacing */
             margin-top: 70px; /* Prevent header overlap */
-            opacity: 0.5;
+            opacity: 0.9; /* Make it more opaque for readability */
         }
+
+        /* Feature Boxes in the Second Hero Section */
+        .hero-section2 .features {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Space between boxes */
+            margin-top: 30px; /* Space between the text and the boxes */
+            flex-wrap: wrap; /* Make boxes wrap on smaller screens */
+        }
+
+        .hero-section2 .feature-box {
+            background-color: #1A3757; /* Dark blue background */
+            color: #FFFFFF; /* White text color */
+            text-align: center; /* Center the text */
+            padding: 20px 30px; /* Padding for better spacing */
+            border-radius: 10px; /* Rounded corners */
+            font-size: 1.2rem; /* Font size for the text */
+            font-weight: bold; /* Bold text */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+            max-width: 250px; /* Limit the width of each box */
+            flex: 1; /* Allow boxes to grow equally */
+            margin: 10px; /* Add margin for spacing */
+        }
+
 
         .hero-section h1, .hero-section2 h1 {
             font-size: 48px;
@@ -208,7 +235,6 @@
         </div>
     </section>
 
-    <!-- Second Hero Section -->
     <section class="hero-section2">
         <div>
             <h1>Mission Statement</h1>
@@ -216,17 +242,15 @@
                 opportunities related to the African continent to navigate the
                 continent’s emerging market by providing:
             </p>
+            <!-- Add feature boxes here -->
+            <div class="features">
+                <div class="feature-box">Exclusive Insights</div>
+                <div class="feature-box">Unparalleled Networking</div>
+                <div class="feature-box">Practical Knowledge</div>
+            </div>
         </div>
     </section>
-
-    <!-- Feature Boxes Section -->
-    <section class="features-section">
-        <div class="features">
-            <div class="feature-box">Exclusive Insights</div>
-            <div class="feature-box">Unparalleled Networking</div>
-            <div class="feature-box">Practical Knowledge</div>
-        </div>
-    </section>
+    
 
     <!-- Footer -->
     <footer>
