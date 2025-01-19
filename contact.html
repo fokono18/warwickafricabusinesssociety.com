@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
     <link rel="icon" href="wabs.jpeg" type="image/jpeg">
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -22,6 +19,7 @@
             min-height: 100vh;
             font-family: Arial, sans-serif;
         }
+
         header {
             background-color: #152B52;
             position: fixed;
@@ -63,7 +61,6 @@
             color: #ffffff;
         }
 
-
         .hero-section {
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("africa.jpeg") center/cover;
             height: 70vh;
@@ -85,9 +82,7 @@
             max-width: 600px;
         }
 
-
         main {
-            
             flex: 1;
             padding: 20px;
         }
@@ -102,6 +97,7 @@
         footer p {
             margin: 5px 0;
         }
+
         footer img {
             height: 35px;
             padding: 0 10px;
@@ -110,7 +106,6 @@
         section {
             margin-bottom: 40px;
         }
-
 
         form {
             max-width: 500px;
@@ -149,6 +144,54 @@
             background-color: #29648A;
         }
 
+        .two-column {
+            display: flex;
+            margin-top: 40px;
+            min-height: 60vh;
+        }
+
+        .two-column .left-section {
+            flex: 1;
+            background: url('35.png') no-repeat center center/cover;
+        }
+
+        .two-column .right-section {
+            flex: 1;
+            padding: 40px;
+            background-color: #ffffff;
+            color: #1a1a1a;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .two-column .right-section h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+
+        .two-column .contact-info {
+            margin: 20px 0;
+        }
+
+        .two-column .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .two-column .social-icons a img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .two-column .social-icons a img:hover {
+            transform: scale(1.1);
+        }
+
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
@@ -168,6 +211,14 @@
 
             .hero-section p {
                 font-size: 16px;
+            }
+
+            .two-column {
+                flex-direction: column;
+            }
+
+            .two-column .left-section {
+                height: 200px;
             }
         }
     </style>
@@ -190,7 +241,6 @@
             <h2><br><br><br>Get in Touch</h2>
             <p>Reach out to us via email or phone.</p>
             <form id="contactForm">
-            
                 <label for="name">Name *</label><br>
                 <input type="text" id="name" name="name" placeholder="Your name" required><br><br>
 
@@ -204,47 +254,45 @@
 
                 <button type="submit">Send</button>
             </form>
-            <script>
-                emailjs.init('3AtKE1qr2jbtdDEhi') //initiliazes js account (this is my public key , change to yours if needed)
+        </section>
 
-                const form = document.getElementById('contactForm'); // grabs the form created for use (this turns each element into a key value pair)
-
-                form.addEventListener('submit', function(event){ // adds the event listener which basically waits for submit to be clicked before the callback function is used
-                    
-                    event.preventDefault(); // prevents default behaviour of form submission, where the form is appended to the url.
-
-                    const name = document.getElementById('name').value; 
-                    const email = document.getElementById('email').value;    // grabs the values and stores them under the names
-                    const message = document.getElementById('message').value;
-
-                    const params = {
-                        from_name: name,
-                        from_email: email,  // think about this as storing all of the parameters in one object
-                        message: message,
-                    };
-
-                    emailjs.send('service_tzkm4yn', 'template_6nud1oa', params) // uses the service and template id , again can be chanmged to suite your account also uses the object here to send the email.
-                            .then(function(response) { //  rest is pretty much just for debugging (like a try catch statement)
-                            console.log('SUCCESS!', response.status, response.text);
-                            alert('Email sent successfully!');
-                        }, function(error) {
-                            console.log('FAILED...', error);
-                            alert('Failed to send email.' + ' ' +error.text);
-                        });
-                });
-
-            </script>
+        <!-- Two-Column Layout -->
+        <section class="two-column">
+            <div class="left-section"></div>
+            <div class="right-section">
+                <h1>Your final impact statement goes here. Make it memorable!</h1>
+                <div class="contact-info">
+                    <p>Add your location</p>
+                    <p>123 Anywhere St.,<br>Any City, ST 12345</p>
+                    <p>123-456-7890</p>
+                    <p>hello@reallygreatsite.com</p>
+                </div>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com" target="_blank">
+                        <img src="ig_logo.png" alt="Instagram">
+                    </a>
+                    <a href="https://www.facebook.com" target="_blank">
+                        <img src="facebook_logo.png" alt="Facebook">
+                    </a>
+                    <a href="https://www.x.com" target="_blank">
+                        <img src="x_logo.png" alt="X">
+                    </a>
+                    <a href="https://www.linkedin.com" target="_blank">
+                        <img src="linkedin_logo.png" alt="LinkedIn">
+                    </a>
+                </div>
+            </div>
         </section>
     </main>
     <footer>
-        <a href="https://www.instagram.com/warwickafricanbusinesssoc/"><img src="ig_logo.png" alt="ig logo"></a>
-        <a href="https://www.linkedin.com/company/warwick-african-business-society/?viewAsMember=true"><img src="linkedin_logo.png" alt="linkedin logo"></a>
+        <a href="https://www.instagram.com/warwickafricanbusinesssoc/">
+            <img src="ig_logo.png" alt="ig logo">
+        </a>
+        <a href="https://www.linkedin.com/company/warwick-african-business-society/?viewAsMember=true">
+            <img src="linkedin_logo.png" alt="linkedin logo">
+        </a>
         <p>warwickafricanbusinesssociety@gmail.com</p>
         <p>&copy; 2023 by WABS Group</p>
     </footer>
-
 </body>
 </html>
-
-   
-
