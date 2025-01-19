@@ -82,9 +82,51 @@
         }
 
         main {
-            
             flex: 1;
             padding: 20px;
+        }
+
+        /* Sector Section */
+        .sector {
+            margin: 50px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .sector-container {
+            display: flex;
+            flex-direction: row;
+            max-width: 1200px;
+            background-color: #002147;
+            color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 90%;
+        }
+
+        .sector-image img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .sector-content {
+            padding: 2rem;
+            flex: 1;
+        }
+
+        .sector-content h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .sector-content p {
+            font-size: 1rem;
+            line-height: 1.8;
         }
 
         footer {
@@ -97,6 +139,7 @@
         footer p {
             margin: 5px 0;
         }
+
         footer img {
             height: 35px;
             padding: 0 10px;
@@ -126,6 +169,14 @@
             .hero-section p {
                 font-size: 16px;
             }
+
+            .sector-container {
+                flex-direction: column;
+            }
+
+            .sector-content {
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -143,228 +194,69 @@
         </nav>
     </header>
     <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div>
+                <h1>About Warwick African Business Society</h1>
+                <p>Driving innovation and growth across key sectors in Africa.</p>
+            </div>
+        </section>
+
+        <!-- Sectors Section -->
         <section>
-            <h2><br><br><br>About Warwick African Business Society</h2>
-            <p><br><br></p>
-            <h3>Our 4 Sectors driving the future of Africa</h3>
-            <ul>
-                <li>Energy</li>
-                <li>Finance</li>
-                <li>Technology</li>
-                <li>Real Estate & Property Development</li>
-            </ul>
+            <h2 style="text-align: center; margin-bottom: 40px;">Our Four Sectors Driving the Future of Africa</h2>
+            <div class="sector">
+                <!-- Energy Sector -->
+                <div class="sector-container">
+                    <div class="sector-image">
+                        <img src="energy_sec.png" alt="Energy Sector">
+                    </div>
+                    <div class="sector-content">
+                        <h2>Energy</h2>
+                        <p>Details about energy go here. Details about energy go here. Details about energy go here.</p>
+                    </div>
+                </div>
+
+                <!-- Finance Sector -->
+                <div class="sector-container">
+                    <div class="sector-image">
+                        <img src="finance_sec.png" alt="Finance Sector">
+                    </div>
+                    <div class="sector-content">
+                        <h2>Finance</h2>
+                        <p>Details about finance go here. Details about finance go here. Details about finance go here.</p>
+                    </div>
+                </div>
+
+                <!-- Technology Sector -->
+                <div class="sector-container">
+                    <div class="sector-image">
+                        <img src="tech_sec.png" alt="Technology Sector">
+                    </div>
+                    <div class="sector-content">
+                        <h2>Technology</h2>
+                        <p>Details about technology go here. Details about technology go here. Details about technology go here.</p>
+                    </div>
+                </div>
+
+                <!-- Real Estate Sector -->
+                <div class="sector-container">
+                    <div class="sector-image">
+                        <img src="resec.png" alt="Real Estate Sector">
+                    </div>
+                    <div class="sector-content">
+                        <h2>Real Estate & Property Development</h2>
+                        <p>Details about real estate go here. Details about real estate go here. Details about real estate go here.</p>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     <footer>
-        <a href="https://www.instagram.com/warwickafricanbusinesssoc/"><img src="ig_logo.png" alt="ig logo"></a>
-        <a href="https://www.linkedin.com/company/warwick-african-business-society/?viewAsMember=true"><img src="linkedin_logo.png" alt="linkedin logo"></a>
+        <a href="https://www.instagram.com/warwickafricanbusinesssoc/"><img src="ig_logo.png" alt="Instagram Logo"></a>
+        <a href="https://www.linkedin.com/company/warwick-african-business-society/?viewAsMember=true"><img src="linkedin_logo.png" alt="LinkedIn Logo"></a>
         <p>warwickafricanbusinesssociety@gmail.com</p>
         <p>&copy; 2023 by WABS Group</p>
     </footer>
 </body>
 </html>
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
-    <link rel="icon" href="wabs.jpeg" type="image/jpeg">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            font-family: Arial, sans-serif;
-        }
-
-        header {
-            background-color: #152B52;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
-
-        header img {
-            height: 70px;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 20px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #ffffff;
-            font-weight: bold;
-            padding: 10px 15px;
-            border-radius: 5px;
-        }
-
-        nav ul li a:hover {
-            background-color: #29648A;
-            color: #ffffff;
-        }
-
-        .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("africa.jpeg") center/cover;
-            height: 70vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #ffffff;
-            margin-top: 70px; 
-        }
-
-        .hero-section h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-
-        .hero-section p {
-            font-size: 18px;
-            max-width: 600px;
-        }
-
-        .sector-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("africa.jpeg") center/cover;
-            height: 70vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #ffffff;
-            margin-top: 350px; 
-        }
-
-        .sector-section h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-
-        .sector-section p {
-            font-size: 18px;
-            max-width: 600px;
-        }
-
-        main {
-            
-            flex: 1;
-            padding: 20px;
-        }
-
-        .hero-section, .sector-section {
-            margin-bottom: 50px; /* Adjust the value as needed */
-        }
-
-        footer {
-            background-color: #152B52;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-        }
-
-        footer p {
-            margin: 5px 0;
-        }
-        footer img {
-            height: 35px;
-            padding: 0 10px;
-        }
-
-        section {
-            margin-bottom: 40px;
-        }
-
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                height: auto;
-                padding: 10px;
-            }
-
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-                margin-top: 10px;
-            }
-
-            .hero-section h1 {
-                font-size: 36px;
-            }
-
-            .hero-section p {
-                font-size: 16px;
-            }
-        }
-
-        
-    </style>
-</head>
-<body>
-    <header>
-        <a href="index.html"><img src="wabs.jpeg" alt="WABS Logo"></a>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="report.html">Industry Sector Reports</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section class=hero-section>
-            <img src="about_us_1.png" alt="Hero Image" style="width: 100%; height: 70; display: block;">
-        </section>
-
-
-        <section class = sector-section>
-            <img src="energy_sec.png" alt="Hero Image" style="width: 100%; height: 70; display: block;">
-        </section>
-            
-
-        <section class = sector-section>
-
-            <img src="finance_sec.png" alt="fsec" style="width: 100%; height: 70; display: block;">
-        </section>
-
-        <section class = sector-section>
-
-            <img src="tech_sec.png" alt="tsec" style="width: 100%; height: 70; display: block;">
-        </section>
-
-        <section class = sector-section>
-
-            <img src="resec.png" alt="resec" style="width: 100%; height: 70; display: block;">
-        </section>
-    </main>
-    <footer>
-        <a href="https://www.instagram.com/warwickafricanbusinesssoc/"><img src="ig_logo.png" alt="ig logo"></a>
-        <a href="https://www.linkedin.com/company/warwick-african-business-society/?viewAsMember=true"><img src="linkedin_logo.png" alt="linkedin logo"></a>
-        <p>warwickafricanbusinesssociety@gmail.com</p>
-        <p>&copy; 2023 by WABS Group</p>
-    </footer>
-</body>
-</html> -->
