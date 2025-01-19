@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="icon" href="wabs.jpeg" type="image/jpeg">
-
     <style>
-        
+        /* Global Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        /* Body Styling */
         body {
             display: flex;
             flex-direction: column;
@@ -21,6 +21,7 @@
             font-family: Arial, sans-serif;
         }
 
+        /* Header Styling */
         header {
             background-color: #152B52;
             position: fixed;
@@ -59,10 +60,10 @@
 
         nav ul li a:hover {
             background-color: #29648A;
-            color: #ffffff;
         }
 
-        .hero-section {
+        /* Hero Section Styling */
+        .hero-section, .hero-section2 {
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("africa.jpeg") center/cover;
             height: 70vh;
             display: flex;
@@ -70,46 +71,51 @@
             justify-content: center;
             text-align: center;
             color: #ffffff;
-            margin-top: 70px; /* To prevent header overlap */
+            margin-top: 70px; /* Prevent header overlap */
         }
 
-        .hero-section h1 {
+        .hero-section h1, .hero-section2 h1 {
             font-size: 48px;
             margin-bottom: 20px;
         }
 
-        .hero-section p {
+        .hero-section p, .hero-section2 p {
             font-size: 18px;
             max-width: 600px;
         }
 
-        
-        .hero-section2 {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("africa.jpeg") center/cover;
-            height: 70vh;
+        /* Logo Section Styling */
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo-text {
             display: flex;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #ffffff;
-            margin-top: 300px; /* To prevent header overlap */
+            text-align: left;
         }
 
-        .hero-section2 h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
+        .large-text {
+            font-size: 6rem;
+            font-weight: bold;
+            margin-right: 1rem;
         }
 
-        .hero-section2 p {
-            font-size: 18px;
-            max-width: 600px;
+        .divider {
+            width: 2px;
+            background-color: white;
+            height: auto;
+            margin-right: 1rem;
         }
 
-        main {
-            flex: 1;
-            padding: 20px;
+        .small-text {
+            font-size: 1.5rem;
+            line-height: 2rem;
         }
 
+        /* Footer Styling */
         footer {
             background-color: #152B52;
             color: #fff;
@@ -123,13 +129,10 @@
 
         footer img {
             height: 35px;
-            padding: 0 10px;
+            margin: 0 10px;
         }
 
-        section {
-            margin-bottom: 40px;
-        }
-
+        /* Responsive Styling */
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
@@ -143,62 +146,19 @@
                 margin-top: 10px;
             }
 
-            .hero-section h1 {
+            .hero-section h1, .hero-section2 h1 {
                 font-size: 36px;
             }
 
-            .hero-section p {
+            .hero-section p, .hero-section2 p {
                 font-size: 16px;
             }
         }
-        .logo-container {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: url('background-image.jpg') no-repeat center center/cover;
-    }
-
-    .logo-text {
-      position: relative;
-      display: flex;
-      align-items: flex-start;
-      text-align: left;
-    }
-
-    .large-text {
-      font-size: 6rem;
-      font-weight: bold;
-      margin-right: 1rem;
-    }
-
-    .divider {
-      width: 2px;
-      background-color: white;
-      height: 100%;
-      margin-right: 1rem;
-    }
-
-    .small-text {
-      font-size: 1.5rem;
-      line-height: 2rem;
-    }
-
-    .background-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.6); /* Adjust opacity as needed */
-      z-index: -1;
-    }
     </style>
 </head>
 <body>
 
+    <!-- Header -->
     <header>
         <a href="index.html"><img src="wabs.jpeg" alt="WABS Logo"></a>
         <nav>
@@ -212,51 +172,41 @@
         </nav>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero-section">
-        <img src="hero.png" alt="Hero Image" style="width: 100%; height: 70; display: block;">
         <div class="logo-container">
             <div class="logo-text">
-              <span class="large-text">WABS</span>
-              <span class="divider"></span>
-              <span class="small-text">
-                Warwick<br>
-                African<br>
-                Business<br>
-                Society
-              </span>
+                <span class="large-text">WABS</span>
+                <span class="divider"></span>
+                <span class="small-text">
+                    Warwick<br>
+                    African<br>
+                    Business<br>
+                    Society
+                </span>
             </div>
-            <div class=".hero-section"></div>
-          </div>
+        </div>
     </section>
 
+    <!-- Second Hero Section -->
     <section class="hero-section2">
-        <img src="other_hero.png" alt="Hero Image 2" style="width: 100%; height: 70; display: block;">
-        
-            
-        
+        <div>
+            <h1>Another Hero Section</h1>
+            <p>Include a subtitle or description here to enhance the section.</p>
+        </div>
     </section>
 
-    
-
-
-
-
-    <main>
-        <section>
-            
-            <h2><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></h2>
-        </section>
-    </main>
-
-
+    <!-- Footer -->
     <footer>
-        <a href="https://www.instagram.com/warwickafricanbusinesssoc/"><img src="ig_logo.png" alt="ig logo"></a>
-        <a href="https://www.linkedin.com/company/warwick-african-business-society/?viewAsMember=true"><img src="linkedin_logo.png" alt="linkedin logo"></a>
+        <a href="https://www.instagram.com/warwickafricanbusinesssoc/">
+            <img src="ig_logo.png" alt="Instagram Logo">
+        </a>
+        <a href="https://www.linkedin.com/company/warwick-african-business-society/?viewAsMember=true">
+            <img src="linkedin_logo.png" alt="LinkedIn Logo">
+        </a>
         <p>warwickafricanbusinesssociety@gmail.com</p>
         <p>&copy; 2023 by WABS Group</p>
-        
     </footer>
+
 </body>
 </html>
-
-
