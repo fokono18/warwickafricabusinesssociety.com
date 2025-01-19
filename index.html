@@ -207,6 +207,36 @@
             font-size: 0.9em;
             line-height: 1.5;
         }
+        /* Follow Us Section */
+        .follow-us {
+            background-color: #ffffff;
+            text-align: center;
+            padding: 30px 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .follow-us h2 {
+            color: #152B52;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icons a img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons a img:hover {
+            transform: scale(1.2);
+        }
+
     </style>
 </head>
 <body>
@@ -271,7 +301,18 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <section class="follow-us">
+        <h2>Follow Us At</h2>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/warwickafricanbusinesssoc/" target="_blank">
+                <img src="ig_logo.png" alt="Instagram Logo">
+            </a>
+            <a href="https://www.linkedin.com/company/warwick-african-business-society/?viewAsMember=true" target="_blank">
+                <img src="linkedin_logo.png" alt="LinkedIn Logo">
+            </a>
+        </div>
+    </section>
+    
     <footer>
         <a href="https://www.instagram.com/warwickafricanbusinesssoc/">
             <img src="ig_logo.png" alt="Instagram Logo">
@@ -279,9 +320,10 @@
         <a href="https://www.linkedin.com/company/warwick-african-business-society/?viewAsMember=true">
             <img src="linkedin_logo.png" alt="LinkedIn Logo">
         </a>
-        <p>warwickafricanbusinesssociety@gmail.com</p>
+        <p>warwickafricabusinesssociety@gmail.com</p>
         <p>&copy; 2023 by WABS Group</p>
     </footer>
+    
 
 </body>
 </html>
