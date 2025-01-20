@@ -503,232 +503,109 @@
 </body>
 </html> -->
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
     <link rel="icon" href="wabs.jpeg" type="image/jpeg">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            font-family: Arial, sans-serif;
-        }
-
-        @font-face {
-            font-family: 'montserrat';
-            src: url('Montserrat-Bold.ttf') format('opentype');
-            font-weight: normal;
-            font-style: normal;
-        }
-
+        /* Adjustments for Responsiveness */
         header {
-            background-color: #152B52;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 15px;
-            z-index: 1000;
+            flex-wrap: wrap;
         }
-
-        header img {
-            height: 50px;
-            width: auto;
-        }
-
+    
         nav ul {
-            display: flex;
-            list-style: none;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    
+        nav ul li {
+            margin: 5px; /* Reduce margins for mobile */
+        }
+    
+        .hero-section, .hero-section2 {
+            background-size: cover;
+            background-position: center;
+        }
+    
+        .hero-section h1, .hero-section2 h1 {
+            font-size: 6vw; /* Scale font size */
+        }
+    
+        .hero-section p, .hero-section2 p {
+            font-size: 4vw; /* Scale text */
+            padding: 0 5%; /* Add padding for readability */
+        }
+    
+        .features {
             gap: 10px;
         }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #ffffff;
-            font-weight: bold;
-            padding: 8px 12px;
-            border-radius: 5px;
-            font-size: 14px;
-            white-space: nowrap;
-        }
-
-        .hero-section {
-            background: url("info.png") center/cover no-repeat;
-            height: 50vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #ffffff;
-            margin-top: 60px;
-            padding: 20px;
-        }
-
-        .hero-section h1 {
-            font-size: 2rem;
-            margin-bottom: 15px;
-            color: #002147;
-            line-height: 1.3;
-        }
-
-        .sector-container {
-            display: flex;
-            flex-direction: column;
-            background-color: #002147;
-            color: white;
-            margin-bottom: 20px;
-        }
-
-        .sector-image img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-
-        .sector-content {
-            padding: 25px;
-            text-align: center;
-        }
-
-        .sector-content h2 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-
-        .sector-content p {
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        
-        .hero-section {
-            margin-bottom: 50px;
-        }
-
-        
-
-        .hero-section2 {
-            background-color: #1A3757;
-            padding: 40px 20px;
-            text-align: center;
-            color: #ffffff;
-        }
-
-        .hero-section2 h1 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-        }
-
-        .features {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-top: 25px;
-        }
-
+    
         .feature-box {
-            background-color: #FFFFFF;
-            color: #1A3757;
-            padding: 15px;
-            font-size: 1.1rem;
-            border-radius: 8px;
-            width: 100%;
-            box-sizing: border-box;
+            font-size: 3vw;
+            padding: 10px;
+            margin: 5px;
         }
-
-        .team-section {
-            padding: 40px 20px;
-            background-color: #f9f9f9;
-        }
-
-        .team-section h2 {
-            font-size: 1.8rem;
-            margin-bottom: 25px;
-            color: #152B52;
-        }
-
-        .team-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 25px;
-        }
-
-        .team-member img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin-bottom: 15px;
-        }
-
-        footer {
-            background-color: #152B52;
-            color: #fff;
-            text-align: center;
-            padding: 20px 10px;
-        }
-
-        footer img {
-            height: 30px;
-            margin: 0 8px;
-        }
-
-        @media (min-width: 768px) {
-            .sector-container {
-                flex-direction: row;
-            }
-            
-            .sector-container:nth-child(even) {
-                flex-direction: row-reverse;
-            }
-
-            .features {
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .feature-box {
-                max-width: 300px;
-            }
-        }
-
-        @media (max-width: 480px) {
+    
+        /* Media Queries */
+        @media (max-width: 768px) {
             header {
-                height: 55px;
-                padding: 0 10px;
+                flex-direction: column;
+                align-items: center;
+                height: auto;
+                padding: 10px;
             }
-
-            header img {
-                height: 45px;
+    
+            nav ul {
+                flex-direction: column;
+                align-items: center;
             }
-
+    
             nav ul li a {
-                font-size: 13px;
-                padding: 6px 8px;
+                padding: 5px 10px;
+                font-size: 16px;
             }
-
-            .hero-section h1 {
-                font-size: 1.8rem;
+    
+            .hero-section h1, .hero-section2 h1 {
+                font-size: 8vw;
             }
-
-            .team-member img {
+    
+            .hero-section p, .hero-section2 p {
+                font-size: 5vw;
+            }
+    
+            .features {
+                flex-direction: column;
+            }
+    
+            .feature-box {
+                width: 100%; /* Full width on smaller screens */
+            }
+    
+            .founders {
+                flex-direction: column;
+            }
+    
+            .founder img {
                 width: 100px;
                 height: 100px;
+            }
+        }
+    
+        @media (max-width: 480px) {
+            .hero-section h1, .hero-section2 h1 {
+                font-size: 10vw;
+            }
+    
+            .hero-section p, .hero-section2 p {
+                font-size: 6vw;
+            }
+    
+            .social-icons a img {
+                width: 30px;
+                height: 30px;
             }
         }
     </style>
@@ -739,88 +616,100 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="report.html">Reports</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="report.html">Industry Sector Reports</a></li>
                 <li><a href="events.html">Events</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
     </header>
-
     <main>
+        
         <section class="hero-section">
             <div class="hero-section-header">
                 <h1>Our Four Sectors Driving The Future of Africa</h1>
             </div>
         </section>
 
+        
         <section class="sector">
+            
             <div class="sector-container">
                 <div class="sector-image">
                     <img src="40.png" alt="Energy Sector">
                 </div>
                 <div class="sector-content">
                     <h2>Energy</h2>
-                    <p>Explore Africa's renewable energy potential, sustainable energy solutions, and investments shaping the future of clean energy across the continent.</p>
+                    <p>
+                        Explore Africa's renewable energy potential, sustainable energy solutions, and investments shaping the future of clean energy across the continent.
+                    </p>
                 </div>
             </div>
 
+            
             <div class="sector-container">
                 <div class="sector-image">
                     <img src="38.png" alt="Finance Sector">
                 </div>
                 <div class="sector-content">
                     <h2>Finance</h2>
-                    <p>Discover the evolving financial landscape, innovative fintech solutions, and global partnerships revolutionizing the African finance sector.</p>
+                    <p>
+                        Discover the evolving financial landscape, innovative fintech solutions, and global partnerships revolutionizing the African finance sector.
+                    </p>
                 </div>
             </div>
 
+            
             <div class="sector-container">
                 <div class="sector-image">
                     <img src="41.png" alt="Technology Sector">
                 </div>
                 <div class="sector-content">
                     <h2>Technology</h2>
-                    <p>Learn about groundbreaking advancements in technology, digital transformation, and Africa’s tech hubs driving innovation.</p>
+                    <p>
+                        Learn about groundbreaking advancements in technology, digital transformation, and Africa’s tech hubs driving innovation.
+                    </p>
                 </div>
             </div>
 
+            
             <div class="sector-container">
                 <div class="sector-image">
                     <img src="39.png" alt="Real Estate Sector">
                 </div>
                 <div class="sector-content">
                     <h2>Real Estate & Property Development</h2>
-                    <p>Explore Africa’s growing real estate market, urban development projects, and sustainable housing solutions transforming cities.</p>
+                    <p>
+                        Explore Africa’s growing real estate market, urban development projects, and sustainable housing solutions transforming cities.
+                    </p>
                 </div>
             </div>
         </section>
     </main>
-
     <section class="hero-section2">
-        <div class="hero-section-header">
+        <div class = "hero-section-header">
             <h1>Goals & Mission</h1>
             <p>To empower those with a future interest in business opportunities related to the African continent to navigate the continent’s emerging market by providing:</p>
         </div>
-        <div class="features">
-            <div class="feature-box">Exclusive Insights</div>
-            <div class="feature-box">Unparalleled Networking</div>
-            <div class="feature-box">Practical Knowledge</div>
-        </div>
+            <div class="features">
+                <div class="feature-box">Exclusive Insights</div>
+                <div class="feature-box">Unparalleled Networking</div>
+                <div class="feature-box">Practical Knowledge</div>
+            </div>
     </section>
-
     <section class="team-section">
         <h2>Our Team</h2>
         <div class="team-container">
+            
             <div class="team-member">
                 <img src="team-member.jpg" alt="Team Member">
-                <h3>Emmanuel Ogunsakin</h3>
+                <h3>Temi Balogun</h3>
                 <p>President/ Co-Founder</p>
             </div>
         
             <div class="team-member">
                 <img src="team-member.jpg" alt="Team Member">
-                <h3>Temi Balogun</h3>
+                <h3>Emmanuel Ogunsakin</h3>
                 <p>President/ Co-Founder</p>
             </div>
             
@@ -864,14 +753,13 @@
                 <h3>Antoine Agu</h3>
                 <p>Head of Technology</p>
             </div>
+           
+            
         </div>
     </section>
-
     <footer>
-        <div>
-            <a href="https://www.instagram.com/warwickafricanbusinesssoc/"><img src="ig_logo.png" alt="Instagram"></a>
-            <a href="https://www.linkedin.com/company/warwick-african-business-society/?viewAsMember=true"><img src="linkedin_logo.png" alt="LinkedIn"></a>
-        </div>
+        <a href="https://www.instagram.com/warwickafricanbusinesssoc/"><img src="ig_logo.png" alt="Instagram Logo"></a>
+        <a href="https://www.linkedin.com/company/warwick-african-business-society/?viewAsMember=true"><img src="linkedin_logo.png" alt="LinkedIn Logo"></a>
         <p>warwickafricanbusinesssociety@gmail.com</p>
         <p>&copy; 2023 by WABS Group</p>
     </footer>
