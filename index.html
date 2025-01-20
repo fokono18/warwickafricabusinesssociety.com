@@ -682,60 +682,54 @@
         }
 
         @media (max-width: 768px) {
-        header {
-            flex-direction: column;
-            align-items: flex-start;
-            height: auto;
+            header {
+                height: 60px;
+                padding: 0 10px;
+            }
+
+            header img {
+                height: 40px;
+            }
+
+            nav ul li a {
+                padding: 6px 8px;
+                font-size: 13px;
+            }
+
+            .hero-section {
+                height: 50vh;
+            }
+
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+
+            
         }
 
-        nav ul {
-            flex-direction: column;
-            gap: 10px;
-            margin-top: 10px;
-        }
+        @media (max-width: 480px) {
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: flex-end;
+            }
 
-        .hero-section h1 {
-            font-size: 2rem;
-        }
+            nav ul li {
+                margin-left: 6px;
+            }
 
-        .hero-section p {
-            font-size: 1rem;
-        }
+            nav ul li a {
+                padding: 5px 6px;
+                font-size: 12px;
+            }
 
-        .feature-box {
-            width: 100%; /* Full width on smaller screens */
-            max-width: 300px;
-        }
+            .hero-section h1 {
+                font-size: 1.8rem;
+            }
 
-        .founders {
-            flex-direction: column;
-            align-items: center;
+            footer img {
+                height: 28px;
+            }
         }
-    }
-
-    @media (max-width: 480px) {
-        .hero-section {
-            padding: 15px;
-        }
-
-        .hero-section h1 {
-            font-size: 1.5rem;
-        }
-
-        .hero-section p {
-            font-size: 0.9rem;
-        }
-
-        .feature-box {
-            font-size: 0.9rem;
-            padding: 15px;
-        }
-
-        .social-icons a img {
-            width: 30px;
-            height: 30px;
-        }
-    }
 
     </style>
 </head>
