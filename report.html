@@ -279,6 +279,18 @@
             max-width: 600px;
         }
 
+        .report-section {
+             text-align: center;
+             padding: 50px 20px;
+             background-color: #f9f9f9; /* Light gray background */
+         }
+ 
+         .report-section h2 {
+             font-size: 2.5rem;
+             margin-bottom: 30px;
+             color: #152B52; /* Navy Blue */
+         }
+
         main {
             
             flex: 1;
@@ -389,6 +401,29 @@
              object-fit: cover;
              box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
          }
+
+         .report{
+             text-align: center;
+         }
+ 
+         .report img{
+             width: 150px;
+             height: 150px;
+             border-radius: 50%;
+             object-fit: cover;
+             margin-bottom: 20px;
+             justify-content: center;
+         }
+ 
+         .report h2 {
+             font-size: 1.2em;
+             margin-bottom: 10px;
+         }
+ 
+         .report p {
+             font-size: 0.9em;
+             line-height: 1.5;
+         }
     </style>
 </head>
 <body>
@@ -406,18 +441,22 @@
     </header>
 
     <main>
-        <section>
-            <h1><br><br><br></h1>
-            <h2>Industry Sector Reports</h2>
-            <p>Explore our latest reports categorized by sector.</p>
-            <ul>
-                <li>2024 Energy Sector Report</li>
-                <a href="https://drive.google.com/file/d/1ca8xEQ-or6g_HC22gg8o2Do7NPv18aHu/view?usp=sharing" style="text-decoration: none; color: blue;">Click here to download the report</a>
-                <li>2024 Finance Sector Report</li>
-                <li>2024 Technology Sector Report</li>
-                <li>2024 Real Estate Sector Report</li>
-            </ul>
+        <section class = "report-section">
+            <h2>Our reports</h2>
+            <div class="buttons">
+                <button data-report="Energy">Energy</button>
+                <button data-report="Finance">Finance/button>
+                <button data-report="Technology">Technology</button>
+                <button data-report="Real Estate & Property Development">Real Estate & Property Development</button>
+            </div>
+
+            <div class="report-gallery" id="Energy">
+                <div class="report">
+                    <img src="em.jpg" alt="Emmanuel Ogunsakin">
+                </div>   
+            </div>
         </section>
+
     </main>
 
     <footer>
@@ -426,5 +465,24 @@
         <p>warwickafricanbusinesssociety@gmail.com</p>
         <p>&copy; 2023 by WABS Group</p>
     </footer>
+
+    <script>
+        const buttons = document.querySelectorAll('.buttons button');
+        const galleries = document.querySelectorAll('.report-gallery');
+    
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const team = button.getAttribute('data-report');
+    
+                galleries.forEach(gallery => {
+                    if (gallery.id === team) {
+                        gallery.classList.add('active');
+                    } else {
+                        gallery.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
