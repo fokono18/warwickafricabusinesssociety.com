@@ -291,6 +291,36 @@
 
                 <button type="submit">Send</button>
             </form>
+            <script>
+                emailjs.init('3AtKE1qr2jbtdDEhi') //initiliazes js account (this is my public key , change to yours if needed)
+
+                const form = document.getElementById('contactForm'); // grabs the form created for use (this turns each element into a key value pair)
+
+                form.addEventListener('submit', function(event){ // adds the event listener which basically waits for submit to be clicked before the callback function is used
+                    
+                    event.preventDefault(); // prevents default behaviour of form submission, where the form is appended to the url.
+
+                    const name = document.getElementById('name').value; 
+                    const email = document.getElementById('email').value;    // grabs the values and stores them under the names
+                    const message = document.getElementById('message').value;
+
+                    const params = {
+                        from_name: name,
+                        from_email: email,  // think about this as storing all of the parameters in one object
+                        message: message,
+                    };
+
+                    emailjs.send('service_tzkm4yn', 'template_6nud1oa', params) // uses the service and template id , again can be chanmged to suite your account also uses the object here to send the email.
+                            .then(function(response) { //  rest is pretty much just for debugging (like a try catch statement)
+                            console.log('SUCCESS!', response.status, response.text);
+                            alert('Email sent successfully!');
+                        }, function(error) {
+                            console.log('FAILED...', error);
+                            alert('Failed to send email.' + ' ' +error.text);
+                        });
+                });
+
+            </script>
         </section>
     </main>
     <footer>
