@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -258,10 +258,10 @@
         </nav>
     </header>
     <main>
-        <!-- Two-Column Layout -->
+         Two-Column Layout 
         <section class="hero-section">
             <img src = "Contact-hero.jpg" alt = "C-hero">
-            <!-- <div class="left-section"></div>
+             <div class="left-section"></div>
             <div class="right-section">
                 <h1>Warwick, Coventry CV4 7AL, UK.</h1>
                  <div class="contact-info">
@@ -271,10 +271,10 @@
                     <p>hello@reallygreatsite.com</p>
                 </div> 
                 
-            </div> -->
+            </div> 
         </section>
 
-        <!-- Get in Touch Section -->
+         Get in Touch Section 
         <section>
             <h2><br><br><br>Get in Touch</h2>
             <p>Reach out to us via email or phone.</p>
@@ -324,6 +324,195 @@
             </script>
         </section>
     </main>
+    <footer>
+        <a href="https://www.instagram.com/warwickafricanbusinesssoc/">
+            <img src="ig_logo.png" alt="ig logo">
+        </a>
+        <a href="https://www.linkedin.com/company/warwick-african-business-society/?viewAsMember=true">
+            <img src="linkedin_logo.png" alt="linkedin logo">
+        </a>
+        <p>warwickafricanbusinesssociety@gmail.com</p>
+        <p>&copy; 2023 by WABS Group</p>
+    </footer>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Same meta tags and title -->
+    <style>
+        /* Previous styles remain the same */
+
+        .hero-container {
+            position: relative;
+            width: 100%;
+            margin-top: 70px; /* Offset for fixed header */
+        }
+
+        .contact-hero {
+            width: 100%;
+            height: 40vh;
+            object-fit: cover;
+        }
+
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #152B52;
+            font-size: 2.5rem;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+        }
+
+        .content-section {
+            display: flex;
+            gap: 40px;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .left-content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .right-content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        /* Form styling */
+        form {
+            max-width: 100%;
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .content-section {
+                flex-direction: column;
+                padding: 20px 10px;
+            }
+
+            .hero-text {
+                font-size: 2rem;
+            }
+
+            form {
+                padding: 20px;
+            }
+
+            input, textarea {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text {
+                font-size: 1.5rem;
+            }
+
+            .content-section {
+                padding: 10px;
+            }
+
+            .left-content, .right-content {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="wabs.jpeg" alt="WABS Logo"></a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="report.html">Reports</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero-container">
+            <img src="Contact-hero.jpg" alt="Contact hero" class="contact-hero">
+            <h1 class="hero-text">Contact Us</h1>
+        </div>
+
+        <section class="content-section">
+            <div class="left-content">
+                <h2>Get in Touch</h2>
+                <p>Reach out to us for any inquiries or collaborations. We're here to help!</p>
+                <div class="contact-info">
+                    <p><strong>Address:</strong><br>
+                    Warwick, Coventry CV4 7AL, UK</p>
+                    
+                    <p><strong>Email:</strong><br>
+                    hello@reallygreatsite.com</p>
+                    
+                    <p><strong>Phone:</strong><br>
+                    123-456-7890</p>
+                </div>
+            </div>
+
+            <div class="right-content">
+                <form id="contactForm">
+                    <label for="name">Name *</label><br>
+                    <input type="text" id="name" name="name" placeholder="Your name" required><br><br>
+    
+                    <label for="email">Email *</label><br>
+                    <input type="email" id="email" name="email" placeholder="Your email" required><br><br>
+    
+                    <label for="message">Message *</label><br>
+                    <textarea id="message" name="message" rows="4" placeholder="Your message" required></textarea><br><br>
+    
+                    <p>* indicates required field</p>
+    
+                    <button type="submit">Send</button>
+                </form>
+                <script>
+                    emailjs.init('3AtKE1qr2jbtdDEhi') //initiliazes js account (this is my public key , change to yours if needed)
+    
+                    const form = document.getElementById('contactForm'); // grabs the form created for use (this turns each element into a key value pair)
+    
+                    form.addEventListener('submit', function(event){ // adds the event listener which basically waits for submit to be clicked before the callback function is used
+                        
+                        event.preventDefault(); // prevents default behaviour of form submission, where the form is appended to the url.
+    
+                        const name = document.getElementById('name').value; 
+                        const email = document.getElementById('email').value;    // grabs the values and stores them under the names
+                        const message = document.getElementById('message').value;
+    
+                        const params = {
+                            from_name: name,
+                            from_email: email,  // think about this as storing all of the parameters in one object
+                            message: message,
+                        };
+    
+                        emailjs.send('service_tzkm4yn', 'template_6nud1oa', params) // uses the service and template id , again can be chanmged to suite your account also uses the object here to send the email.
+                                .then(function(response) { //  rest is pretty much just for debugging (like a try catch statement)
+                                console.log('SUCCESS!', response.status, response.text);
+                                alert('Email sent successfully!');
+                            }, function(error) {
+                                console.log('FAILED...', error);
+                                alert('Failed to send email.' + ' ' +error.text);
+                            });
+                    });
+    
+                </script>
+            </div>
+        </section>
+    </main>
+
     <footer>
         <a href="https://www.instagram.com/warwickafricanbusinesssoc/">
             <img src="ig_logo.png" alt="ig logo">
