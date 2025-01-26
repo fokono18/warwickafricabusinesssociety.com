@@ -95,8 +95,29 @@
             color: #ffffff;
             margin-top: 60px;
             padding: 20px;
-	    font-family: 'TheSeasons', Arial, sans-serif;
+	        font-family: 'TheSeasons', Arial, sans-serif;
+            position: relative;
+            text-align: center;
         }
+        .hero-subtitle {
+            font-family: 'TheSeasons', Arial, sans-serif;
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-top: 30px;
+            line-height: 1.3;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (max-width: 768px) {
+            .hero-subtitle {
+                font-size: 1.2rem;
+                padding: 0 20px;
+                margin-top: 20px;
+            }
+        }   
 
         .logo-text {
             display: flex;
@@ -464,7 +485,9 @@
                     Business<br>
                     Society
                 </span>
-                <p>The Fastest Growing Society On University of Warwick Campus</p>
+                <div class="hero-subtitle">
+                    The Fastest Growing Society On University of Warwick Campus
+                </div>
             </div>
         </div>
     </section>
