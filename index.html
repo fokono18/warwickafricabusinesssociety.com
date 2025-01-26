@@ -98,34 +98,34 @@
 	    font-family: 'TheSeasons', Arial, sans-serif;
         }
 
-        @media (max-width: 768px) {
         .logo-text {
-            flex-direction: row; 
-            flex-wrap: wrap; 
-            justify-content: center;
-            gap: 5px; 
-            width: 100%; 
-            font-family: 'TheSeasons', Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            gap: 20px;
+	    font-family: 'TheSeasons', Arial, sans-serif;
         }
 
-        .divider {
-            height: 100px; /* Restore vertical divider */
-            width: 2px; /* Original divider thickness */
-            margin: 0 10px; /* Add horizontal spacing */
-            font-family: 'TheSeasons', Arial, sans-serif;
-        }
-
-        .small-text {
-            text-align: left; /* Align text to left */
-            font-size: 1rem; /* Adjust font size */
-            font-family: 'TheSeasons', Arial, sans-serif;
-        }
-        }
         .large-text {
             font-size: 4rem;
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
             font-family: 'TheSeasons', Arial, sans-serif;
+        }
+
+        .divider {
+            width: 2px;
+            background-color: white;
+            height: 100px;
+            margin: 0 20px;
+	    font-family: 'TheSeasons', Arial, sans-serif;
+        }
+
+        .small-text {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            font-family: 'TheSeasons', Arial, sans-serif;
+            font-weight: 300;
         }
 
         .hero-section2 {
@@ -208,13 +208,7 @@
             margin-bottom: 20px;
         }
 
-        .content {
-            max-width: 600px;
-            text-align: center;
-            display: flex; 
-            flex-direction: column;
-            flex-grow: 1;    
-        }
+        
 
         blockquote {
             font-size: 1rem;
@@ -223,12 +217,36 @@
             font-style: italic;
             color: #333;
         }
+        /* Modify existing styles */
+        .content {
+            max-width: 600px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            min-height: 200px; /* Set minimum height for content area */
+        }
 
         .author {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
             color: #152B52;
-            margin-top: auto;
+            margin-top: auto; /* Pushes name to bottom */
+            padding-top: 15px; /* Add spacing between quote and name */
+        }
+
+        /* Add media query for mobile */
+        @media (max-width: 768px) {
+            .content {
+                min-height: auto; /* Remove fixed height on mobile */
+            }
+            .author {
+                padding-top: 10px;
+                font-size: 0.9rem; /* Adjust font size for mobile */
+            }
+            .role {
+                font-size: 0.8rem;
+            }
         }
 
         .role {
@@ -399,7 +417,6 @@
             align-items: center;
             max-width: 500px;
             margin: 0 auto;
-            height: 100%;
         }
 
         @media (min-width: 768px) {
