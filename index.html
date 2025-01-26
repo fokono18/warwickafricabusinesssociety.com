@@ -2,21 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>WABS - Home</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="icon" href="wabs.jpeg" type="image/jpeg">
     <style>
-        /* Global Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+	@font-face {
+            font-family: 'TheSeasons';
+            src: url('font.woff') format('opentype');
+            /* Add additional formats for web compatibility */
+            font-weight: normal;
+            font-style: normal;
+        }
 
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         header {
@@ -25,11 +34,11 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 70px;
+            height: 60px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 20px;
+            padding: 0 15px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             z-index: 1000;
         }
@@ -41,419 +50,348 @@
         nav ul {
             display: flex;
             list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 20px;
+            gap: 10px;
         }
 
         nav ul li a {
             text-decoration: none;
             color: #ffffff;
-            font-weight: bold;
-            padding: 10px 15px;
+            font-weight: 500;
+            padding: 8px 12px;
             border-radius: 5px;
-        }
-
-        nav ul li a:hover {
-            background-color: #29648A;
-        }
-
-        footer {
-            background-color: #152B52;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-        }
-
-        footer p {
-            margin: 5px 0;
-        }
-
-        footer img {
-            height: 35px;
-            margin: 0 10px;
-        }
-
-        /* Meet the Founders Section */
-        .founders-section {
-            margin-top: 0px; /* Offset for fixed header */
-        }
-
-        .section {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 50px;
-            color: white;
-        }
-
-        .section:nth-child(1) {
-            background-color: #152B52; 
-            flex-direction: row; 
-        }
-
-        .section:nth-child(2) {
-            background-color: #2c2c2c; 
-            flex-direction: row-reverse;
-        }
-
-        .content {
-            max-width: 600px;
-            padding: 20px;
-        }
-
-        blockquote {
-            font-size: 1.2rem;
-            margin: 0;
-            line-height: 1.6;
-            font-style: italic;
-        }
-
-        .author {
-            margin-top: 10px;
-            font-weight: bold;
-        }
-
-        .role {
             font-size: 0.9rem;
-            color: #ccc;
-        }
-
-        .image-container {
-            text-align: center;
-            padding: 20px;
-        }
-
-        .founder-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .section {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .content {
-                padding: 10px;
-            }
-        }
-                /* Global Reset */
-                * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        @font-face {
-            font-family: 'TheSeasons';
-            src: url('font.woff') format('opentype');
-            /* Add additional formats for web compatibility */
-            font-weight: normal;
-            font-style: normal;
-        }
-        @font-face {
-            font-family: 'montserrat';
-            src: url('Montserrat-Bold.ttf') format('opentype');
-            /* Add additional formats for web compatibility */
-            font-weight: normal;
-            font-style: normal;
-        }
-        .montserrat-bold {
-            font-family: "Montserrat", serif;
-            font-optical-sizing: auto;
-            font-weight: 700; /* Bold */
-            font-style: normal;
-            }
-
-            .montserrat-light {
-            font-family: "Montserrat", serif;
-            font-optical-sizing: auto;
-            font-weight: 300; /* Light */
-            font-style: normal;
-            }
-
-
-
-        /* Body Styling */
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            font-family: Arial, sans-serif;
-        }
-
-        /* Header Styling */
-        header {
-            background-color: #152B52;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
-
-        header img {
-            height: 70px;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 20px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #ffffff;
-            font-weight: bold;
-            padding: 10px 15px;
-            border-radius: 5px;
+            transition: background-color 0.3s;
         }
 
         nav ul li a:hover {
             background-color: #29648A;
         }
 
-        
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1001;
+        }
 
-        /* Hero Section Styling */
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: #fff;
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
         .hero-section {
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("hero.png") center/cover;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
             color: #ffffff;
-            margin-top: 70px; /* Prevent header overlap */
-            font-family: 'TheSeasons', Arial, sans-serif;
-        }
-
-        .hero-section2 {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("mission.png") center/cover;
-            height: 90vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #ffffff;
-            padding: 50px 20px;
-            margin-top: 0px;
-            
-        }
-
-        .hero-section2 .features {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
-
-        .hero-section2 .feature-box {
-            background-color: #1A3757;
-            color: #FFFFFF;
-            text-align: center;
-            padding: 20px 30px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            max-width: 250px;
-            flex: 1;
-            margin: 10px;
-            font-family: 'montserrat', Arial, sans-serif;
-        }
-
-        .hero-section h1, .hero-section2 h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            font-family: 'TheSeasons', Arial, sans-serif;
-        }
-        .leader h1{
-            background-color: #152B52;
-            color: #fff;
-            text-align: center;
-            font-size: 48px;
-            margin-bottom: 0px;
-            font-family: 'montserrat', Arial, sans-serif;
-        }
-        .hero-section2 h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            font-family: 'montserrat', Arial, sans-serif;
-        }
-
-        .hero-section p {
-            font-size: 18px;
-            max-width: 600px;
-            font-family: 'montserrat', Arial, sans-serif;
-        }
-        .hero-section2 p {
-            font-size: 18px;
-            max-width: 600px;
-            font-family: 'montserrat', Arial, sans-serif;
-        }
-
-        .logo-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            margin-top: 60px;
+            padding: 20px;
+	    font-family: 'TheSeasons', Arial, sans-serif;
         }
 
         .logo-text {
             display: flex;
             align-items: center;
-            text-align: left;
+            flex-direction: row;
+            gap: 20px;
+	    font-family: 'TheSeasons', Arial, sans-serif;
         }
 
         .large-text {
-            font-size: 6rem;
-            font-weight: bold;
-            margin-right: 1rem;
+            font-size: 4rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-family: 'TheSeasons', Arial, sans-serif;
         }
 
         .divider {
             width: 2px;
             background-color: white;
-            height: auto;
-            margin-right: 1rem;
+            height: 100px;
+            margin: 0 20px;
+	    font-family: 'TheSeasons', Arial, sans-serif;
         }
 
         .small-text {
-            font-size: 1.5rem;
-            line-height: 2rem;
+            font-size: 1.2rem;
+            line-height: 1.5;
+            font-family: 'TheSeasons', Arial, sans-serif;
+            font-weight: 300;
+        }
+
+        .hero-section2 {
+            min-height: 70vh;
+            padding: 40px 20px;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("mission.png") center/cover;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-section-header {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-section-header h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        .hero-section-header p {
+            font-size: 1rem;
+            margin-bottom: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+        }
+
+        .features {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .feature-box {
+            background-color: #1A3757;
+            color: #FFFFFF;
+            padding: 15px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .leader h1 {
+            background-color: #152B52;
+            color: #fff;
+            text-align: center;
+            padding: 30px 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .founders-section {
+            background-color: #ffffff;
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            padding: 30px 15px;
+            align-items: center;
+        }
+
+        .section:nth-child(odd) {
+            background-color: #f8f8f8;
+        }
+
+        .founder-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            max-width: 600px;
+            text-align: center;
+        }
+
+        blockquote {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            font-style: italic;
+            color: #333;
+        }
+
+        .author {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #152B52;
+        }
+
+        .role {
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: 400;
         }
 
         footer {
             background-color: #152B52;
             color: #fff;
             text-align: center;
-            padding: 20px 0;
-        }
-
-        footer p {
-            margin: 9px 0;
+            padding: 30px 20px;
+            margin-top: auto;
         }
 
         footer img {
             height: 35px;
-            margin: 0 10px;
-        }
-
-        
-        /* Follow Us Section */
-        .follow-us {
-            background-color: #ffffff;
-            text-align: center;
-            padding: 30px 20px;
-            font-family: Arial, sans-serif;
-        }
-
-        .follow-us h2 {
-            color: #152B52;
-            font-size: 40px;
-            margin-bottom: 20px;
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .social-icons a img {
-            width: 40px;
-            height: 40px;
+            margin: 15px 10px;
             transition: transform 0.3s ease;
         }
 
-        .social-icons a img:hover {
-            transform: scale(1.2);
+        footer img:hover {
+            transform: scale(1.1);
         }
-        .divider {
-            width: 5px;
-            height: 110px; /* Adjust as necessary */
-            background-color: #ffffff;
-            margin-right: 20px;
-        }
-        .hero-section-header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
 
-
+        footer p {
+            margin: 10px 0;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
         }
 
         @media (max-width: 768px) {
-            header {
-                height: 60px;
-                padding: 0 10px;
+            .hamburger {
+                display: block;
             }
 
-            header img {
-                height: 40px;
-            }
-
-            nav ul li a {
-                padding: 6px 8px;
-                font-size: 13px;
-            }
-
-            .hero-section {
-                height: 50vh;
-            }
-
-            .hero-section h1 {
-                font-size: 2rem;
-            }
-
-            
-        }
-
-        @media (max-width: 480px) {
             nav ul {
-                flex-wrap: wrap;
-                justify-content: flex-end;
+                position: fixed;
+                top: 60px;
+                right: -100%;
+                flex-direction: column;
+                background: #152B52;
+                width: 100%;
+                height: calc(100vh - 60px);
+                transition: 0.3s;
+                padding: 20px 0;
+            }
+
+            nav ul.show-menu {
+                right: 0;
             }
 
             nav ul li {
-                margin-left: 6px;
+                margin: 10px 0;
             }
 
             nav ul li a {
-                padding: 5px 6px;
-                font-size: 12px;
+                font-size: 1.1rem;
+                padding: 15px;
             }
 
-            .hero-section h1 {
-                font-size: 1.8rem;
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
             }
 
-            footer img {
-                height: 28px;
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+
+            .logo-text {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .divider {
+                height: 2px;
+                width: 80px;
+                margin: 20px 0;
+            }
+
+            .large-text {
+                font-size: 3.5rem;
+            }
+
+            .small-text {
+                font-size: 1.1rem;
             }
         }
 
+        @media (min-width: 768px) {
+            header {
+                height: 70px;
+                padding: 0 20px;
+            }
+
+            nav ul li a {
+                font-size: 1rem;
+                padding: 10px 15px;
+            }
+
+            .large-text {
+                font-size: 6rem;
+            }
+
+            .small-text {
+                font-size: 1.5rem;
+            }
+
+            .features {
+                flex-direction: row;
+            }
+
+            .feature-box {
+                max-width: 250px;
+                padding: 20px 30px;
+            }
+
+            .section {
+                flex-direction: row;
+                padding: 50px;
+                gap: 40px;
+            }
+
+            .section:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+
+            .founder-img {
+                width: 150px;
+                height: 150px;
+            }
+
+            .hero-section-header h1 {
+                font-size: 3rem;
+            }
+
+            .leader h1 {
+                font-size: 3rem;
+                padding: 50px 20px;
+            }
+        }
+
+        @media (min-width: 480px) {
+            .hero-section-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .leader h1 {
+                font-size: 2.5rem;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <a href="index.html"><img src="wabs.jpeg" alt="WABS Logo"></a>
+        <button class="hamburger" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -464,6 +402,7 @@
             </ul>
         </nav>
     </header>
+
     <section class="hero-section">
         <div class="logo-container">
             <div class="logo-text">
@@ -476,68 +415,79 @@
                     Society
                 </span>
             </div>
-            <div class="text-banner">
-                <p><br><br></p>
-            </div>
         </div>
     </section>
 
     <section class="hero-section2">
-        <div class = "hero-section-header">
+        <div class="hero-section-header">
             <h1>Mission Statement</h1>
             <p>Empowering ambitious minds with the tools, network and practical insights to navigate the potential of Africa's future business landscape</p>
-        </div>
             <div class="features">
                 <div class="feature-box">Exclusive Insights</div>
                 <div class="feature-box">Unparalleled Networking</div>
                 <div class="feature-box">Practical Knowledge</div>
             </div>
+        </div>
     </section>
-    <section >
-    <div class ="leader">
-    <h1>Meet our Founders</h1>
-    </div>
+
+    <section class="leader">
+        <h1>Meet our Founders</h1>
     </section>
+
     <section class="founders-section">
-        <!-- First Founder Section -->
         <div class="section">
             <div class="image-container">
-                <img class="founder-img" src="pics/30.png" alt="Emmanuel Ogunsakin">
+                <img class="founder-img" src="30.png" alt="Emmanuel Ogunsakin">
             </div>
             <div class="content">
                 <blockquote>
-                    ‟I want this society to leave a lasting legacy at Warwick by connecting and empowering students from the African diaspora with students from diverse backgrounds to become the next generation of business leaders in Africa.”
+                    “I envision this society leaving a lasting legacy at Warwick by uniting and empowering students from the African diaspora and diverse backgrounds to create the next generation business leaders in Africa.”
                 </blockquote>
                 <div class="author">
                     EMMANUEL OGUNSAKIN
-                    <div class="role">President/ Co-Founder</div>
+                    <div class="role">President/Co-Founder</div>
                 </div>
             </div>
         </div>
 
-        <!-- Second Founder Section -->
         <div class="section">
             <div class="image-container">
-                <img class="founder-img" src="pics/28.png"Temi Balogun">
+                <img class="founder-img" src="28.png" alt="Temi Balogun">
             </div>
             <div class="content">
                 <blockquote>
-                    ‟ Establish WABS as the definitive Warwick platform recognised for connecting young ambitious minds with industry and political leaders;
-                    fostering collaboration and partnerships at the forefront of a transformative generation of innovation, corporate, and investment opportunity shaping Africa’s future business landscape. ”
+                    “Establish WABS as the definitive Warwick platform recognized for connecting young ambitious minds with industry and political leaders; fostering collaboration and partnerships at the forefront of a transformative generation of innovation, corporate, and investment opportunity shaping Africa’s future business landscape.”
                 </blockquote>
                 <div class="author">
                     TEMI BALOGUN
-                    <div class="role">President/ Co-Founder</div>
+                    <div class="role">President/Co-Founder</div>
                 </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <a href="https://www.instagram.com/warwickafricanbusinesssoc/"><img src="ig_logo.png" alt="Instagram Logo"></a>
-        <a href="https://www.linkedin.com/company/warwick-african-business-society/?viewAsMember=true"><img src="linkedin_logo.png" alt="LinkedIn Logo"></a>
+        <a href="https://www.instagram.com/warwickafricanbusinesssoc/"><img src="ig_logo.png" alt="Instagram"></a>
+        <a href="https://www.linkedin.com/company/warwick-african-business-society/?viewAsMember=true"><img src="linkedin_logo.png" alt="LinkedIn"></a>
         <p>warwickafricanbusinesssociety@gmail.com</p>
         <p>&copy; 2024 by WABS Group</p>
     </footer>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('nav ul');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('show-menu');
+        });
+
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('show-menu');
+            });
+        });
+    </script>
 </body>
 </html>
