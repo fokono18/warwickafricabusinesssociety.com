@@ -1,342 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <link rel="icon" href="wabs.jpeg" type="image/jpeg">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            font-family: Arial, sans-serif;
-        }
-
-        header {
-            background-color: #152B52;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
-
-        header img {
-            height: 70px;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 20px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #ffffff;
-            font-weight: bold;
-            padding: 10px 15px;
-            border-radius: 5px;
-        }
-
-        nav ul li a:hover {
-            background-color: #29648A;
-            color: #ffffff;
-        }
-
-        .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("africa.jpeg") center/cover;
-            height: 70vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #ffffff;
-            margin-top: 70px;
-        }
-
-        .hero-section h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-
-        .hero-section p {
-            font-size: 18px;
-            max-width: 600px;
-        }
-
-        main {
-            flex: 1;
-            padding: 20px;
-        }
-
-        footer {
-            background-color: #152B52;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-        }
-
-        footer p {
-            margin: 5px 0;
-        }
-
-        footer img {
-            height: 35px;
-            padding: 0 10px;
-        }
-
-        section {
-            margin-bottom: 40px;
-        }
-
-        form {
-            max-width: 500px;
-            margin: 20px auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background: #f9f9f9;
-        }
-
-        label {
-            font-weight: bold;
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        button {
-            background-color: #152B52;
-            color: #fff;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #29648A;
-        }
-
-        .two-column {
-            display: flex;
-            margin-top: 40px;
-            min-height: 60vh;
-        }
-
-        .two-column .left-section {
-            margin-top: 40px;
-            flex: 1;
-            background: url('35.png') no-repeat center center/cover;
-        }
-
-        .two-column .right-section {
-            flex: 1;
-            padding: 40px;
-            background-color: #ffffff;
-            color: #1a1a1a;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-        }
-
-        .two-column .right-section h1 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #1a1a1a;
-        }
-
-        .two-column .contact-info {
-            margin: 20px 0;
-        }
-
-        .two-column .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .two-column .social-icons a img {
-            width: 40px;
-            height: 40px;
-            transition: transform 0.3s ease;
-        }
-
-        .two-column .social-icons a img:hover {
-            transform: scale(1.1);
-        }
-
-        @media (max-width: 768px) {
-            header {
-                height: 60px;
-                padding: 0 10px;
-            }
-
-            header img {
-                height: 40px;
-            }
-
-            nav ul li a {
-                padding: 6px 8px;
-                font-size: 13px;
-            }
-
-            .hero-section {
-                height: 50vh;
-            }
-
-            .hero-section h1 {
-                font-size: 2rem;
-            }
-
-            
-        }
-
-        @media (max-width: 480px) {
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: flex-end;
-            }
-
-            nav ul li {
-                margin-left: 6px;
-            }
-
-            nav ul li a {
-                padding: 5px 6px;
-                font-size: 12px;
-            }
-
-            .hero-section h1 {
-                font-size: 1.8rem;
-            }
-
-            footer img {
-                height: 28px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <a href="index.html"><img src="wabs.jpeg" alt="WABS Logo"></a>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="report.html">Reports</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-         Two-Column Layout 
-        <section class="hero-section">
-            <img src = "Contact-hero.jpg" alt = "C-hero">
-             <div class="left-section"></div>
-            <div class="right-section">
-                <h1>Warwick, Coventry CV4 7AL, UK.</h1>
-                 <div class="contact-info">
-                    <p>Add your location</p>
-                    <p>123 Anywhere St.,<br>Any City, ST 12345</p>
-                    <p>123-456-7890</p>
-                    <p>hello@reallygreatsite.com</p>
-                </div> 
-                
-            </div> 
-        </section>
-
-         Get in Touch Section 
-        <section>
-            <h2><br><br><br>Get in Touch</h2>
-            <p>Reach out to us via email or phone.</p>
-            <form id="contactForm">
-                <label for="name">Name *</label><br>
-                <input type="text" id="name" name="name" placeholder="Your name" required><br><br>
-
-                <label for="email">Email *</label><br>
-                <input type="email" id="email" name="email" placeholder="Your email" required><br><br>
-
-                <label for="message">Message *</label><br>
-                <textarea id="message" name="message" rows="4" placeholder="Your message" required></textarea><br><br>
-
-                <p>* indicates required field</p>
-
-                <button type="submit">Send</button>
-            </form>
-            <script>
-                emailjs.init('3AtKE1qr2jbtdDEhi') //initiliazes js account (this is my public key , change to yours if needed)
-
-                const form = document.getElementById('contactForm'); // grabs the form created for use (this turns each element into a key value pair)
-
-                form.addEventListener('submit', function(event){ // adds the event listener which basically waits for submit to be clicked before the callback function is used
-                    
-                    event.preventDefault(); // prevents default behaviour of form submission, where the form is appended to the url.
-
-                    const name = document.getElementById('name').value; 
-                    const email = document.getElementById('email').value;    // grabs the values and stores them under the names
-                    const message = document.getElementById('message').value;
-
-                    const params = {
-                        from_name: name,
-                        from_email: email,  // think about this as storing all of the parameters in one object
-                        message: message,
-                    };
-
-                    emailjs.send('service_tzkm4yn', 'template_6nud1oa', params) // uses the service and template id , again can be chanmged to suite your account also uses the object here to send the email.
-                            .then(function(response) { //  rest is pretty much just for debugging (like a try catch statement)
-                            console.log('SUCCESS!', response.status, response.text);
-                            alert('Email sent successfully!');
-                        }, function(error) {
-                            console.log('FAILED...', error);
-                            alert('Failed to send email.' + ' ' +error.text);
-                        });
-                });
-
-            </script>
-        </section>
-    </main>
-    <footer>
-        <a href="https://www.instagram.com/warwickafricanbusinesssoc/">
-            <img src="ig_logo.png" alt="ig logo">
-        </a>
-        <a href="https://www.linkedin.com/company/warwick-african-business-society/?viewAsMember=true">
-            <img src="linkedin_logo.png" alt="linkedin logo">
-        </a>
-        <p>warwickafricanbusinesssociety@gmail.com</p>
-        <p>&copy; 2023 by WABS Group</p>
-    </footer>
-</body>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -378,6 +39,25 @@
             height: 70px;
         }
 
+        /* Hamburger Menu Styles */
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: #fff;
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
         nav ul {
             display: flex;
             list-style: none;
@@ -400,142 +80,10 @@
             color: #ffffff;
         }
 
-        .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("africa.jpeg") center/cover;
-            height: 70vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #ffffff;
-            margin-top: 70px;
-        }
-
-        .hero-section h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-
-        .hero-section p {
-            font-size: 18px;
-            max-width: 600px;
-        }
-
-        main {
-            flex: 1;
-            padding: 20px;
-        }
-
-        footer {
-            background-color: #152B52;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-        }
-
-        footer p {
-            margin: 5px 0;
-        }
-
-        footer img {
-            height: 35px;
-            padding: 0 10px;
-        }
-
-        section {
-            margin-bottom: 40px;
-        }
-
-        form {
-            max-width: 500px;
-            margin: 20px auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background: #f9f9f9;
-        }
-
-        label {
-            font-weight: bold;
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        button {
-            background-color: #152B52;
-            color: #fff;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #29648A;
-        }
-
-        .two-column {
-            display: flex;
-            margin-top: 40px;
-            min-height: 60vh;
-        }
-
-        .two-column .left-section {
-            margin-top: 40px;
-            flex: 1;
-            background: url('35.png') no-repeat center center/cover;
-        }
-
-        .two-column .right-section {
-            flex: 1;
-            padding: 40px;
-            background-color: #ffffff;
-            color: #1a1a1a;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-        }
-
-        .two-column .right-section h1 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #1a1a1a;
-        }
-
-        .two-column .contact-info {
-            margin: 20px 0;
-        }
-
-        .two-column .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .two-column .social-icons a img {
-            width: 40px;
-            height: 40px;
-            transition: transform 0.3s ease;
-        }
-
-        .two-column .social-icons a img:hover {
-            transform: scale(1.1);
-        }
-
         .hero-container {
             position: relative;
             width: 100%;
-            margin-top: 70px; /* Offset for fixed header */
+            margin-top: 70px;
         }
 
         .contact-hero {
@@ -573,7 +121,6 @@
             padding: 20px;
         }
 
-        /* Form styling */
         form {
             max-width: 100%;
             background: #f9f9f9;
@@ -582,8 +129,52 @@
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
 
-        @media (max-width: 768px) {
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
 
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #152B52;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #29648A;
+        }
+
+        footer {
+            background-color: #152B52;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer img {
+            height: 35px;
+            padding: 0 10px;
+            transition: transform 0.3s;
+        }
+
+        footer img:hover {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
             header {
                 height: 60px;
                 padding: 0 10px;
@@ -593,10 +184,50 @@
                 height: 40px;
             }
 
-            nav ul li a {
-                padding: 6px 8px;
-                font-size: 13px;
+            .hamburger {
+                display: block;
+                margin-left: auto;
             }
+
+            nav ul {
+                position: fixed;
+                top: 60px;
+                right: -100%;
+                flex-direction: column;
+                background: #152B52;
+                width: 100%;
+                height: calc(100vh - 60px);
+                transition: 0.3s;
+                padding: 20px 0;
+            }
+
+            nav ul.show-menu {
+                right: 0;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+                text-align: center;
+            }
+
+            nav ul li a {
+                font-size: 1.1rem;
+                padding: 15px;
+                display: block;
+            }
+
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+
             .content-section {
                 flex-direction: column;
                 padding: 20px 10px;
@@ -605,32 +236,9 @@
             .hero-text {
                 font-size: 2rem;
             }
-
-            form {
-                padding: 20px;
-            }
-
-            input, textarea {
-                font-size: 14px;
-            }
         }
 
         @media (max-width: 480px) {
-
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: flex-end;
-            }
-
-            nav ul li {
-                margin-left: 6px;
-            }
-
-            nav ul li a {
-                padding: 5px 6px;
-                font-size: 12px;
-            }
-
             .hero-text {
                 font-size: 1.5rem;
             }
@@ -652,6 +260,11 @@
 <body>
     <header>
         <a href="index.html"><img src="wabs.jpeg" alt="WABS Logo"></a>
+        <button class="hamburger" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -676,7 +289,6 @@
                 <div class="contact-info">
                     <p><strong></strong><br>
                     Warwick African Business Society</p>
-                    
                     <p><strong></strong><br>
                     Warwick Business School,</p>
                     <p>Scarman Rd,</p>
@@ -687,62 +299,72 @@
 
             <div class="right-content">
                 <form id="contactForm">
-                    <label for="name">Name *</label><br>
-                    <input type="text" id="name" name="name" placeholder="Your name" required><br><br>
-    
-                    <label for="email">Email *</label><br>
-                    <input type="email" id="email" name="email" placeholder="Your email" required><br><br>
-    
-                    <label for="message">Message *</label><br>
-                    <textarea id="message" name="message" rows="4" placeholder="Your message" required></textarea><br><br>
-    
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required>
+                    
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" placeholder="Your email" required>
+                    
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Your message" required></textarea>
+                    
                     <p>* indicates required field</p>
-    
                     <button type="submit">Send</button>
                 </form>
-                <script>
-                    emailjs.init('3AtKE1qr2jbtdDEhi') //initiliazes js account (this is my public key , change to yours if needed)
-    
-                    const form = document.getElementById('contactForm'); // grabs the form created for use (this turns each element into a key value pair)
-    
-                    form.addEventListener('submit', function(event){ // adds the event listener which basically waits for submit to be clicked before the callback function is used
-                        
-                        event.preventDefault(); // prevents default behaviour of form submission, where the form is appended to the url.
-    
-                        const name = document.getElementById('name').value; 
-                        const email = document.getElementById('email').value;    // grabs the values and stores them under the names
-                        const message = document.getElementById('message').value;
-    
-                        const params = {
-                            from_name: name,
-                            from_email: email,  // think about this as storing all of the parameters in one object
-                            message: message,
-                        };
-    
-                        emailjs.send('service_tzkm4yn', 'template_6nud1oa', params) // uses the service and template id , again can be chanmged to suite your account also uses the object here to send the email.
-                                .then(function(response) { //  rest is pretty much just for debugging (like a try catch statement)
-                                console.log('SUCCESS!', response.status, response.text);
-                                alert('Email sent successfully!');
-                            }, function(error) {
-                                console.log('FAILED...', error);
-                                alert('Failed to send email.' + ' ' +error.text);
-                            });
-                    });
-    
-                </script>
             </div>
         </section>
     </main>
 
     <footer>
         <a href="https://www.instagram.com/warwickafricanbusinesssoc/">
-            <img src="ig_logo.png" alt="ig logo">
+            <img src="ig_logo.png" alt="Instagram">
         </a>
         <a href="https://www.linkedin.com/company/warwick-african-business-society/?viewAsMember=true">
-            <img src="linkedin_logo.png" alt="linkedin logo">
+            <img src="linkedin_logo.png" alt="LinkedIn">
         </a>
         <p>warwickafricanbusinesssociety@gmail.com</p>
         <p>&copy; 2024 by WABS Group</p>
     </footer>
+
+    <script>
+        // Hamburger Menu Functionality
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('nav ul');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('show-menu');
+        });
+
+        // Close menu when clicking links
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('show-menu');
+            });
+        });
+
+        // EmailJS Integration
+        emailjs.init('3AtKE1qr2jbtdDEhi');
+
+        const form = document.getElementById('contactForm');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const params = {
+                from_name: document.getElementById('name').value,
+                from_email: document.getElementById('email').value,
+                message: document.getElementById('message').value
+            };
+
+            emailjs.send('service_tzkm4yn', 'template_6nud1oa', params)
+                .then(function(response) {
+                    alert('Email sent successfully!');
+                    form.reset();
+                }, function(error) {
+                    alert('Failed to send email: ' + error.text);
+                });
+        });
+    </script>
 </body>
 </html>
