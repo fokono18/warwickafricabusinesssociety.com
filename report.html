@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Sector Reports</title>
     <link rel="icon" href="wabs.jpeg" type="image/jpeg">
     <style>
@@ -19,7 +19,6 @@
             font-family: Arial, sans-serif;
         }
 
-        /* Improved Header Styles */
         header {
             background-color: #152B52;
             position: fixed;
@@ -30,35 +29,34 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 20px;
+            padding: 0 15px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             z-index: 1000;
         }
 
         header img {
-            height: 70px;
+            height: 50px;
+            width: auto;
         }
 
-        /* Enhanced Hamburger Menu Styles */
+        /* Hamburger Menu Styles */
         .hamburger {
             display: none;
             background: none;
             border: none;
             cursor: pointer;
-            padding: 15px;
+            padding: 10px;
             z-index: 1001;
             margin-left: auto;
-            transition: all 0.3s ease;
         }
 
         .hamburger span {
             display: block;
-            width: 28px;
+            width: 25px;
             height: 3px;
             background: #fff;
             margin: 5px 0;
-            transition: all 0.3s ease-in-out;
-            border-radius: 3px;
+            transition: 0.3s;
         }
 
         nav ul {
@@ -67,39 +65,49 @@
         }
 
         nav ul li {
-            margin-left: 20px;
+            margin-left: 10px;
         }
 
         nav ul li a {
             text-decoration: none;
             color: #ffffff;
             font-weight: bold;
-            padding: 10px 15px;
+            padding: 8px 12px;
             border-radius: 5px;
-            transition: all 0.3s ease;
+            font-size: 14px;
+            white-space: nowrap;
+            transition: background-color 0.3s;
         }
 
         nav ul li a:hover {
             background-color: #29648A;
-            color: #ffffff;
         }
 
+        /* Mobile Styles */
         @media (max-width: 768px) {
+            header {
+                height: 60px;
+                padding: 0 10px;
+            }
+
+            header img {
+                height: 40px;
+            }
+
             .hamburger {
                 display: block;
             }
 
             nav ul {
                 position: fixed;
-                top: 70px;
+                top: 60px;
                 right: -100%;
                 flex-direction: column;
                 background: #152B52;
                 width: 100%;
-                height: calc(100vh - 70px);
-                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                padding: 0;
-                box-shadow: -2px 0 15px rgba(0, 0, 0, 0.1);
+                height: calc(100vh - 60px);
+                transition: 0.3s;
+                padding: 20px 0;
             }
 
             nav ul.show-menu {
@@ -107,51 +115,30 @@
             }
 
             nav ul li {
-                margin: 0;
-                padding: 15px 20px;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-                text-align: left;
-            }
-
-            nav ul li:last-child {
-                border-bottom: none;
+                margin: 10px 0;
+                text-align: center;
             }
 
             nav ul li a {
                 font-size: 1.1rem;
-                padding: 10px 0;
+                padding: 15px;
                 display: block;
             }
 
-            nav ul li a:hover {
-                transform: translateX(8px);
-                background-color: transparent;
-            }
-
             .hamburger.active span:nth-child(1) {
-                transform: rotate(45deg) translate(6px, 6px);
+                transform: rotate(45deg) translate(5px, 5px);
             }
 
             .hamburger.active span:nth-child(2) {
                 opacity: 0;
-                transform: translateX(-20px);
             }
 
             .hamburger.active span:nth-child(3) {
-                transform: rotate(-45deg) translate(6px, -6px);
-            }
-
-            /* Adjust header height for mobile */
-            header {
-                height: 60px;
-            }
-
-            header img {
-                height: 40px;
+                transform: rotate(-45deg) translate(7px, -6px);
             }
         }
 
-        /* Existing Content Styles */
+        /* Existing Report Page Styles */
         .hero-section {
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("africa.jpeg") center/cover;
             height: 70vh;
@@ -169,19 +156,6 @@
             background-color: #f9f9f9;
         }
 
-        /* Footer and other styles remain unchanged */
-        footer {
-            background-color: #152B52;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-        }
-
-        .no-scroll {
-            overflow: hidden;
-        }
-
-        /* Report Gallery Styles */
         .buttons button {
             background-color: #002147;
             color: white;
@@ -202,6 +176,24 @@
         .report-gallery.active {
             display: grid;
         }
+
+        footer {
+            background-color: #152B52;
+            color: #fff;
+            text-align: center;
+            padding: 20px 10px;
+            margin-top: auto;
+        }
+
+        footer img {
+            height: 30px;
+            margin: 0 8px;
+            transition: transform 0.3s;
+        }
+
+        footer img:hover {
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
@@ -215,15 +207,19 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="report.html">Reports</a></li>
                 <li><a href="events.html">Events</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
+        <section class="hero-section">
+            <h1>Sector Reports</h1>
+        </section>
+
         <section class="report-section">
             <h2>Our reports</h2>
             <div class="buttons">
@@ -265,39 +261,37 @@
     </main>
 
     <footer>
-        <a href="https://www.instagram.com/warwickafricanbusinesssoc/"><img src="ig_logo.png" alt="Instagram"></a>
-        <a href="https://www.linkedin.com/company/warwick-african-business-society/?viewAsMember=true"><img src="linkedin_logo.png" alt="LinkedIn"></a>
+        <div>
+            <a href="https://www.instagram.com/warwickafricanbusinesssoc/"><img src="ig_logo.png" alt="Instagram"></a>
+            <a href="https://www.linkedin.com/company/warwick-african-business-society/?viewAsMember=true"><img src="linkedin_logo.png" alt="LinkedIn"></a>
+        </div>
         <p>warwickafricanbusinesssociety@gmail.com</p>
         <p>&copy; 2024 by WABS Group</p>
     </footer>
 
     <script>
-        // Enhanced Hamburger Menu Functionality
+        // Hamburger Menu Functionality
         const hamburger = document.querySelector('.hamburger');
         const navMenu = document.querySelector('nav ul');
-        const body = document.body;
 
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('show-menu');
-            body.classList.toggle('no-scroll');
+        });
+
+        // Close menu when clicking links
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('show-menu');
+            });
         });
 
         // Close menu when clicking outside
         document.addEventListener('click', (e) => {
-            if (!e.target.closest('nav') && !e.target.closest('.hamburger')) {
+            if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('show-menu');
-                body.classList.remove('no-scroll');
-            }
-        });
-
-        // Close menu on window resize
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 768) {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('show-menu');
-                body.classList.remove('no-scroll');
             }
         });
 
