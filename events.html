@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Events</title>
-    <link rel="icon" href="wabs.jpeg" type="image/jpeg">
+    <link rel="icon" href="assets/images/wabs.jpeg" type="image/jpeg">
     <style>
         * {
             margin: 0;
@@ -83,7 +83,7 @@
         }
 
         .hero-section {
-            background: url("Untitled design.png") center/cover no-repeat;
+            background: url("assets/images/Untitled design (1).png") center/cover no-repeat;
             height: 60vh;
             display: flex;
             align-items: center;
@@ -213,10 +213,11 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
     <header>
-        <a href="index.html"><img src="wabs.jpeg" alt="WABS Logo"></a>
+        <a href="index.html"><img src="assets/images/wabs.jpeg" alt="WABS Logo"></a>
         <button class="hamburger" aria-label="Toggle navigation">
             <span></span>
             <span></span>
@@ -244,38 +245,13 @@
 
     <footer>
         <div>
-            <a href="https://www.instagram.com/warwickafricanbusinesssoc/"><img src="ig_logo.png" alt="Instagram"></a>
-            <a href="https://www.linkedin.com/company/warwick-african-business-society/?viewAsMember=true"><img src="linkedin_logo.png" alt="LinkedIn"></a>
+            <a href="https://www.instagram.com/warwickafricanbusinesssoc/"><img src="assets/images/ig_logo.png" alt="Instagram"></a>
+            <a href="https://www.linkedin.com/company/warwick-african-business-society/?viewAsMember=true"><img src="assets/images/linkedin_logo.png" alt="LinkedIn"></a>
         </div>
         <p>warwickafricanbusinesssociety@gmail.com</p>
         <p>&copy; 2024 by WABS Group</p>
     </footer>
 
-    <script>
-        // Hamburger Menu Functionality
-        const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('nav ul');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('show-menu');
-        });
-
-        // Close menu when clicking links
-        document.querySelectorAll('nav ul li a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('show-menu');
-            });
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('show-menu');
-            }
-        });
-    </script>
+    <script src="assets/js/site.js"></script>
 </body>
 </html>

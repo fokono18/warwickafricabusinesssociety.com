@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
-    <link rel="icon" href="wabs.jpeg" type="image/jpeg">
+    <link rel="icon" href="assets/images/wabs.jpeg" type="image/jpeg">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <style>
         * {
@@ -256,10 +256,11 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
     <header>
-        <a href="index.html"><img src="wabs.jpeg" alt="WABS Logo"></a>
+        <a href="index.html"><img src="assets/images/wabs.jpeg" alt="WABS Logo"></a>
         <button class="hamburger" aria-label="Toggle navigation">
             <span></span>
             <span></span>
@@ -278,7 +279,7 @@
 
     <main>
         <div class="hero-container">
-            <img src="Contact-hero.jpg" alt="Contact hero" class="contact-hero">
+            <img src="assets/images/Contact-hero.jpg" alt="Contact hero" class="contact-hero">
             <h1 class="hero-text">Contact Us</h1>
         </div>
 
@@ -317,54 +318,15 @@
 
     <footer>
         <a href="https://www.instagram.com/warwickafricanbusinesssoc/">
-            <img src="ig_logo.png" alt="Instagram">
+            <img src="assets/images/ig_logo.png" alt="Instagram">
         </a>
         <a href="https://www.linkedin.com/company/warwick-african-business-society/?viewAsMember=true">
-            <img src="linkedin_logo.png" alt="LinkedIn">
+            <img src="assets/images/linkedin_logo.png" alt="LinkedIn">
         </a>
         <p>warwickafricanbusinesssociety@gmail.com</p>
         <p>&copy; 2024 by WABS Group</p>
     </footer>
 
-    <script>
-        // Hamburger Menu Functionality
-        const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('nav ul');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('show-menu');
-        });
-
-        // Close menu when clicking links
-        document.querySelectorAll('nav ul li a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('show-menu');
-            });
-        });
-
-        // EmailJS Integration
-        emailjs.init('3AtKE1qr2jbtdDEhi');
-
-        const form = document.getElementById('contactForm');
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const params = {
-                from_name: document.getElementById('name').value,
-                from_email: document.getElementById('email').value,
-                message: document.getElementById('message').value
-            };
-
-            emailjs.send('service_tzkm4yn', 'template_6nud1oa', params)
-                .then(function(response) {
-                    alert('Email sent successfully!');
-                    form.reset();
-                }, function(error) {
-                    alert('Failed to send email: ' + error.text);
-                });
-        });
-    </script>
+    <script src="assets/js/site.js"></script>
 </body>
 </html>

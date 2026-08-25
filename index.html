@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>WABS - Home</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="icon" href="wabs.jpeg" type="image/jpeg">
+    <link rel="icon" href="assets/images/wabs.jpeg" type="image/jpeg">
     <style>
         * {
             margin: 0;
@@ -14,7 +14,7 @@
         }
         @font-face {
             font-family: 'TheSeasons';
-            src: url('font.woff') format('opentype');
+            src: url('assets/fonts/font.woff') format('woff');
             font-weight: normal;
             font-style: normal;
         }
@@ -86,7 +86,7 @@
         }
 
         .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("hero.png") center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("assets/images/hero.png") center/cover;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -191,7 +191,7 @@
         .hero-section2 {
             min-height: 70vh;
             padding: 40px 20px;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("mission.png") center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("assets/images/mission.png") center/cover;
             color: white;
             display: flex;
             flex-direction: column;
@@ -464,17 +464,18 @@
                 gap: 80px;
                 padding: 50px;
             }
-            
+
             .founder-item {
                 max-width: 400px;
                 margin: 0;
             }
         }
     </style>
+    <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
     <header>
-        <a href="index.html"><img src="wabs.jpeg" alt="WABS Logo"></a>
+        <a href="index.html"><img src="assets/images/wabs.jpeg" alt="WABS Logo"></a>
         <button class="hamburger" aria-label="Toggle navigation">
             <span></span>
             <span></span>
@@ -560,27 +561,12 @@
     </section>
 
     <footer>
-        <a href="https://www.instagram.com/warwickafricanbusinesssoc/"><img src="ig_logo.png" alt="Instagram"></a>
-        <a href="https://www.linkedin.com/company/warwick-african-business-society/?viewAsMember=true"><img src="linkedin_logo.png" alt="LinkedIn"></a>
+        <a href="https://www.instagram.com/warwickafricanbusinesssoc/"><img src="assets/images/ig_logo.png" alt="Instagram"></a>
+        <a href="https://www.linkedin.com/company/warwick-african-business-society/?viewAsMember=true"><img src="assets/images/linkedin_logo.png" alt="LinkedIn"></a>
         <p>warwickafricanbusinesssociety@gmail.com</p>
         <p>&copy; 2024 by WABS Group</p>
     </footer>
 
-    <script>
-        const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('nav ul');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('show-menu');
-        });
-
-        document.querySelectorAll('nav ul li a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('show-menu');
-            });
-        });
-    </script>
+    <script src="assets/js/site.js"></script>
 </body>
 </html>

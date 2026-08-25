@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
-    <link rel="icon" href="wabs.jpeg" type="image/jpeg">
+    <link rel="icon" href="assets/images/wabs.jpeg" type="image/jpeg">
     <style>
         /* Base styles */
         body {
@@ -39,7 +39,7 @@
         /* Font settings */
         @font-face {
             font-family: 'montserrat';
-            src: url('Montserrat-Bold.ttf') format('opentype');
+            src: url('assets/fonts/Montserrat-Bold.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
         }
@@ -106,7 +106,7 @@
         }
 
         .hero-section {
-            background: url("info.png");
+            background: url("assets/images/info.png");
             background-size: cover;
         }
 
@@ -389,10 +389,11 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
     <header>
-        <a href="index.html"><img src="wabs.jpeg" alt="WABS Logo"></a>
+        <a href="index.html"><img src="assets/images/wabs.jpeg" alt="WABS Logo"></a>
         <button class="hamburger" aria-label="Toggle navigation">
             <span></span>
             <span></span>
@@ -419,7 +420,7 @@
         <section class="sector">
             <div class="sector-container">
                 <div class="sector-image">
-                    <img src="40.png" alt="Energy Sector">
+                    <img src="assets/images/40.png" alt="Energy Sector">
                 </div>
                 <div class="sector-content">
                     <h2>Energy</h2>
@@ -429,7 +430,7 @@
 
             <div class="sector-container">
                 <div class="sector-image">
-                    <img src="38.png" alt="Finance Sector">
+                    <img src="assets/images/38.png" alt="Finance Sector">
                 </div>
                 <div class="sector-content">
                     <h2>Finance</h2>
@@ -439,7 +440,7 @@
 
             <div class="sector-container">
                 <div class="sector-image">
-                    <img src="41.png" alt="Technology Sector">
+                    <img src="assets/images/41.png" alt="Technology Sector">
                 </div>
                 <div class="sector-content">
                     <h2>Technology</h2>
@@ -449,7 +450,7 @@
 
             <div class="sector-container">
                 <div class="sector-image">
-                    <img src="39.png" alt="Real Estate Sector">
+                    <img src="assets/images/39.png" alt="Real Estate Sector">
                 </div>
                 <div class="sector-content">
                     <h2>Real Estate & Property Development</h2>
@@ -745,41 +746,12 @@
     </section>
 
     <footer>
-        <a href="https://www.instagram.com/warwickafricanbusinesssoc/"><img src="ig_logo.png" alt="Instagram Logo"></a>
-        <a href="https://www.linkedin.com/company/warwick-african-business-society/?viewAsMember=true"><img src="linkedin_logo.png" alt="LinkedIn Logo"></a>
+        <a href="https://www.instagram.com/warwickafricanbusinesssoc/"><img src="assets/images/ig_logo.png" alt="Instagram Logo"></a>
+        <a href="https://www.linkedin.com/company/warwick-african-business-society/?viewAsMember=true"><img src="assets/images/linkedin_logo.png" alt="LinkedIn Logo"></a>
         <p>warwickafricanbusinesssociety@gmail.com</p>
         <p>&copy; 2024 by WABS Group</p>
     </footer>
 
-    <script>
-        // Hamburger Menu Functionality
-        const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('nav ul');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('show-menu');
-        });
-
-        document.querySelectorAll('nav ul li a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('show-menu');
-            });
-        });
-
-        // Team Gallery Functionality
-        const buttons = document.querySelectorAll('.buttons button');
-        const galleries = document.querySelectorAll('.team-gallery');
-
-        buttons.forEach(button => {
-            button.addEventListener('click', () => {
-                const team = button.getAttribute('data-team');
-                galleries.forEach(gallery => {
-                    gallery.classList.toggle('active', gallery.id === team);
-                });
-            });
-        });
-    </script>
+    <script src="assets/js/site.js"></script>
 </body>
 </html>
