@@ -124,7 +124,7 @@
 
     const form = document.getElementById('contactForm');
     if (form && window.emailjs) {
-        emailjs.init('3AtKE1qr2jbtdDEhi');
+        emailjs.init('pU8RlrAmLHMLf6IpW');
         form.addEventListener('submit', event => {
             event.preventDefault();
             const params = {
@@ -132,7 +132,7 @@
                 from_email: form.elements.email.value,
                 message: form.elements.message.value
             };
-            emailjs.send('service_tzkm4yn', 'template_6nud1oa', params)
+            emailjs.send('service_d0gl2v8', 'template_7oyp37i', params)
                 .then(() => {
                     alert('Email sent successfully!');
                     form.reset();
